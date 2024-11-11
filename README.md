@@ -5,5 +5,14 @@
 1주차 ~ 25주차
 
 # 1주차
-1주차/web/기초설명.html /n
-(html공부) 확인요망
+1주차/web/기초설명.html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>1주차 공부</title>
+	</head>
+	<body>
+		<p>1주차 공부</p>
+    <a href="https://github.com/dogsdays123/testMIT"></a>
+	</body>
+</html>

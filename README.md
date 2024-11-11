@@ -1,14 +1,16 @@
-# MIT STUDY
-엠아이티교육원
-
-# 승원의 공부 진행사항
-1주차 ~ 25주차
-
-# 1주차
-1주차/web/기초설명.html
+<!DOCTYPE html>
+<html>
+<h1>MIT STUDY</h1>
+<p>엠아이티교육원</p>
+<h1>승원의 공부 진행사항</h1>
+<p>1주차 ~ 25주차</p>
+</html>
 
 <!DOCTYPE html>
 <html>
+	<header>
+		<h1>1주차</h1>
+	</header>
 	<body>
     <a href="https://github.com/dogsdays123/testMIT/blob/main/1%EC%A3%BC%EC%B0%A8/web/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%85.html"><p>1주차 공부</p></a>
 		<main class="1주차">

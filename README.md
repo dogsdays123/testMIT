@@ -15,9 +15,11 @@
     <a id="raw-url" href="https://github.com/dogsdays123/testMIT/blob/main/1%EC%A3%BC%EC%B0%A8/web/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%85.html">1일차</a>
 		<main class="1일차">
 			<section id="heading">
-				<p>위 링크를 따라 파일을 다운한다.</p>
-				<p>1. 파일다운</p>
-				<p>2. vsCode로 열기</p>
+				<ul>
+				<li>위 링크를 따라 파일을 다운한다.</li>
+				<li>파일다운</li>
+				<li>vsCode로 열기</li>
+				</ul>
 			</section>
 	</body>
 	<div>

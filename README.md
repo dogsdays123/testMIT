@@ -12,7 +12,7 @@
 		<h1>1주차</h1>
 	</header>
 	<body>
-    <a id="raw-url" href="https://github.com/dogsdays123/testMIT/blob/main/1%EC%A3%BC%EC%B0%A8/web/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%85.html">1일차</a>
+    <a id="raw-url" href="https://github.com/dogsdays123/testMIT/blob/main/1week/web/1day/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%85.html">1일차</a>
 		<main class="1일차">
 			<section id="heading">
 				<ul>

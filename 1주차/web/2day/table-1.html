@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid #CCC;
+            border-collapse: collapse;
+        }
+        th, td {padding: 10px 20px;}
+    </style>
 </head>
 <div>
     <h2>상품 구성</h2>
-    <table>
+    <table border="1px">
         <caption>선물용과 가정용 상품 구성</caption>
+        <thead>
         <tr>
         <th>용도</th>
         <th>중량</th>
         <th>갯수</th>
         <th>가격</th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
         <td>선물용/</td>
         <td>5kg/</td>
@@ -33,6 +43,104 @@
         <td>15~17과/</td>
         <td>35,000원/</td>
         </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table>
+        <thead>
+            <caption>present</caption>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">선물용</th>
+                <td>3kg</td>
+                <td>11~16</td>
+                <td>52,000</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>12~13</td>
+                <td>52,000</td>
+            </tr>
+            <tr>
+                <th rowspan="2">가정용</th>
+                <td>5kg</td>
+                <td>1~5</td>
+                <td>32,000</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>1~6</td>
+                <td>52,000</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table>
+        <thead>
+            <caption>present</caption>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">선물용</th>
+                <th colspan="2">2kg</th>
+                <td>11~16</td>
+                <td>52,000</td>
+            </tr>
+            <tr>
+                <td>2kg</td>
+                <td>5kg</td>
+                <td>12~13</td>
+                <td>52,000</td>
+            </tr>
+            <tr>
+                <th rowspan="2">가정용</th>
+                <th colspan="2">6kg</th>
+                <td>1~5</td>
+                <td>32,000</td>
+            </tr>
+            <tr>
+                <td>3kg</td>
+                <td>8kg</td>
+                <td>1~6</td>
+                <td>52,000</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table>
+        <thead>
+        <caption>present</caption>
+        <colgroup>
+            <col style="background-color:aqua;">
+            <col style="background-color: rgb(192, 238, 24);">
+            <col span="2" style="background-color: rgb(255, 176, 222); width:50px;">
+            </colgroup>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">선물용</th>
+                <th>2kg</th>
+                <td>11~16</td>
+                <td>52,000</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>12~13</td>
+                <td>52,000</td>
+            </tr>
+            <tr>
+                <th rowspan="2">가정용</th>
+                <th>6kg</th>
+                <td>1~5</td>
+                <td>32,000</td>
+            </tr>
+            <tr>
+                <td>8kg</td>
+                <td>1~6</td>
+                <td>52,000</td>
+            </tr>
+        </tbody>
     </table>
 </div>
 <body>

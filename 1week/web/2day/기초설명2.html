@@ -1,4 +1,13 @@
 표 나누기
+헤드에 넣기
+<style>
+    table, th, td {
+        border: 1px solid #db9e9e;
+        border-collapse: collapse;
+    }
+    th, td {padding: 10px 20px;}
+</style>
+
 ------------
 <table border="1"> 표 기준
 <caption></caption> 표의 제목
@@ -39,5 +48,9 @@
 <figcaption></figcaption> figure와 붙는 설명 태그
 <img src="cat1.jpg" srcset="cat2.jpg 1x, cat3.jpg 2x" alt="cat"> 사진 srcset은 해상도에 따른 사진표현(700w 1000w 등으로도 가능)
 
+<object data="냥동.mp4" width="80" height="80"></object> 거의 대부분 불러오기 가능
+<embed data="냥동.mp4" width="80" height="80"> 멀티미디어 불러오기 용이
 <audio src="#" controls></audio> 오디오 (컨트롤바생성)
 <video src="냥동.mp4" controls width="250" poster="cat1.jpg"></video> 비디오 (컨트롤바생성 포스터로 섬네일)
+<a href="#엥커"></a> 해당 id를 찾아 앵커
+<a href="#" target="_blank"></a> 새로운 페이지를 연다

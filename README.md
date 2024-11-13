@@ -20,14 +20,17 @@
 				<li>vsCode로 열기</li>
 			</section>
 	</body>
+			<br>
 	<div>
 	<a id="2days-url" href="https://github.com/dogsdays123/testMIT/blob/main/1week/web/2day/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%852.html">2일차</a>
 			<li>링크따라가기</li>
 			<li>파일확인</li>
 	</div>
+			<br>
 	<div>
 		<a id="3days-url" href="https://github.com/dogsdays123/testMIT/blob/main/1week/web/3day/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%853.html">3일차</a>
 			<li>링크따라가기</li>
 			<li>파일확인</li>
 	</div>
+			<br>
 </html>

@@ -1,175 +1,240 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- <style>
-        table, th, td {
+    <style>
+        table,
+        th,
+        td {
             border: 1px solid #000;
             border-collapse: collapse;
         }
-        th, td {padding: 10px 20px;}
-    </style> -->
+
+        th,
+        td {
+            padding: 10px 20px;
+        }
+
+        fieldset {
+            width: 400px;
+        }
+    </style>
 </head>
+
 <body>
     <form method="get" action="test.html" name="food" accept-charset="UTF-8" target="_blank" autocomplete="off">
+        <fieldset>
+            <legend>다양한 음식</legend>
+            <table border="1">
+                <colgroup>
+                    <col style="width: 70px; background-color: rgb(248, 240, 168);">
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <tr>
+                    <th rowspan="2">한식</th>
+                    <td style="width: 100px;">백반</td>
+                    <td>1000원</td>
+                </tr>
+                <tr>
+                    <td>볶음밥</td>
+                    <td>2000원</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">중식</th>
+                    <td>자장면</td>
+                    <td>1000원</td>
+                </tr>
+                <tr>
+                    <td>짬뽕</td>
+                    <td>1500원</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">분식</th>
+                    <td>김밥</td>
+                    <td>500원</td>
+                </tr>
+                <tr>
+                    <td>라면</td>
+                    <td>500원</td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            원하는 음식을 선택하세요. <br>
+            <table border="1">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <tr>
+                    <th colspan="2">한식</th>
+                    <th colspan="2">중식</th>
+                </tr>
+                <tr>
+                    <td><label for="">백반<input type="checkbox"></label></td>
+                    <td><label for="">김밥<input type="checkbox"></label></td>
+                    <td><label for="">자장면<input type="checkbox"></label></td>
+                    <td><label for="">짬뽕<input type="checkbox"></label></td>
+                </tr>
+                <tr>
+                    <th colspan="4">원하는 음식이 없다면 아래에 적어주세요.</th>
+                </tr>
+                <tr>
+                    <th colspan="4"><label for=""><input type="text" style="width: 300px;"></label></th>
+                </tr>
+            </table>
+            <br>
+            검색 <input type="search" name="검색" id="search">
+            <input type="submit" value="확인">
+            <p><input type="number" name="" id=""></p>
+            <li><input type="text"></li>
+            <br>
+            <input type="range" name="" id="">
+            <br>
+            <input type="date">
+            <br>
+            <input type="month">
+        </fieldset>
+    </form>
+    <br>
+    <form method="get" action="test.html" name="food" accept-charset="UTF-8" target="_blank" autocomplete="off">
+        <fieldset>
+            <legend>로그인 폼</legend>
+            <p><label for="food">아이디 : <input type="text" name="로그인" id="user_id" size="10px" placeholder="적어봐"></label>
+            </p>
+            <p><label for="food">비밀번호 : <input type="password" name="비밀번호" id="user_pw" size="10px"></label></p>
+            <input type="submit" value="로그인">
+        </fieldset>
+    </form>
     <fieldset>
-    <legend>다양한 음식</legend>
-    <table border="1">
-        <colgroup>
-        <col style="width: 70px; background-color: rgb(248, 240, 168);">
-        <col>
-        <col>
-        <col>
-        </colgroup>
-        <tr>
-            <th rowspan="2">한식</th>
-            <td style="width: 100px;">백반</td>
-            <td>1000원</td>
-        </tr>
-        <tr>
-            <td>볶음밥</td>
-            <td>2000원</td>
-        </tr>
-        <tr>
-            <th rowspan="2">중식</th>
-            <td>자장면</td>
-            <td>1000원</td>
-        </tr>
-        <tr>
-            <td>짬뽕</td>
-            <td>1500원</td>
-        </tr>
-        <tr>
-            <th rowspan="2">분식</th>
-            <td>김밥</td>
-            <td>500원</td>
-        </tr>
-        <tr>
-            <td>라면</td>
-            <td>500원</td>
-        </tr>
-    </table>
+        <legend>배송 정보</legend>
+        <ul>
+            <li>이름 <input type="text"></li>
+            <li>배송 주소 <input type="text"></li>
+            <li>이메일 <input type="text"></li>
+            <li>연락처 <input type="text"></li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>product</legend>
+        <p><strong>choese your product</strong></p>
+        <ul>
+            <li><label for=""><input type="checkbox" name="prod" value="s_3">present 3kg</label></li>
+            <li><label for=""><input type="checkbox" name="prod" value="s_5">present 5kg</label></li>
+            <li><label for=""><input type="checkbox" name="prod" value="f_3">home 3kg</label></li>
+            <li><label for=""><input type="checkbox" name="prod" value="f_5">home 5kg</label></li>
+        </ul>
+        <p><strong>back choese</strong></p>
+        <ul>
+            <li><label for=""><input type="radio" name="gift" value="yes">back present</label></li>
+            <li><label for=""><input type="radio" name="gift" value="no">no back present</label></li>
+        </ul>
+    </fieldset>
+    <form action="test.html" method="get" name="login" accept-charset="UTF-8" target="_blank" autocomplete="off">
+        <h1>회원 가입을 환영합니다 !</h1>
+        <fieldset>
+            <legend>사용자 정보</legend>
+            <ul>
+                <li><label for="uid">아이디</label><input type="text" id="uid" maxlength="6"></li>
+                <li><label for="uem">이메일</label><input type="text" id="uem"></li>
+                <li><label for="upw">비밀번호</label><input type="text" id="upw"></li>
+                <li><label for="pwc">비밀번호 확인</label><input type="text" id="pwc"></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>이벤트의 새로운 소식</legend>
+            <ul>
+                <input type="radio" name="reci"> 메일 수신
+                <input type="radio" name="reci"> 메일 수신 안 함
+            </ul>
+        </fieldset>
+        <input type="button" value="가입하기">
+        <input type="button" value="취소">
+    </form>
+    <form action="test.html" method="get">
+        <ul>
+            <li><input type="checkbox" name="pr3"> 선물용 3kg <input type="number" name="pr3" min="0" max="5"> 개 (최대 5개)
+            </li>
+            <li><input type="checkbox" name="pr5"> 선물용 5kg <input type="number" name="pr5" min="0" max="3"> 개 (최대 3개)
+            </li>
+        </ul>
+        <input type="submit" value="주문">
+    </form>
+    <br>
+    <input type="range" min="0" max="10" step="1" value="2" oninput="document.getElementById('selected-value').innerText = this.value">
+    <span id="selected-value"></span>
+    <input type="date" min="2024-05-01" max="2024-12-30">
+    <br>
+    <form method="get" action="test.html" name="food" accept-charset="UTF-8" target="_blank" autocomplete="off">
+        <input type="url" id="url">
+        <input type="submit" value="확인">
+    </form>
+    <br>
+    <form action="test.html" method="get" accept-charset="UTF-8" target="_blank">
+        <input type="email" name="email" id="email">
+        <input type="image" src="cat1.jpg" alt="cat" style="width: 50px;">
+        <input type="reset" value="취소">
+    </form>
+    <form action="test.html" method="get" target="_blank">
+        <input type="button" value="공지 창 열기" onclick="window.open('기초설명3.html', '_blank', 'width=300px,height=400px')">
+    </form>
+    <br>
+    <form action="test.html" method="get">
+        파일 업도르 <input type="file">
+        <hr>
+        <input type="submit" name="ban" value="반품하기"> 반품
+        <input type="reset" value="취소하기"> 취소
+    </form>
+    <form action="test.html" method="get">
+        <input type="hidden" name="url" value="사이트 로그인">
+        <label for="">아이디<input type="text" name="id" id="user_id" size="10px" placeholder="아이디" autofocus></label>
+        <label for="">비밀번호<input type="password" name="pw" id="user_pw" size="10px" placeholder="비밀번호"></label>
+        <input type="submit" value="로구인">
+    </form>
     <br>
     <br>
-    원하는 음식을 선택하세요. <br>
-    <table border="1">
-        <colgroup>
-        <col>
-        <col>
-        <col>
-        <col>
-        </colgroup>
-        <tr>
-            <th colspan="2">한식</th>
-            <th colspan="2">중식</th>
-        </tr>
-        <tr>
-            <td><label for="">백반<input type="checkbox"></label></td>
-            <td><label for="">김밥<input type="checkbox"></label></td>
-            <td><label for="">자장면<input type="checkbox"></label></td>
-            <td><label for="">짬뽕<input type="checkbox"></label></td>
-        </tr>
-        <tr>
-            <th colspan="4">원하는 음식이 없다면 아래에 적어주세요.</th>
-        </tr>
-        <tr>
-            <th colspan="4"><label for=""><input type="text" style="width: 300px;"></label></th>
-        </tr>
-    </table>
+    <form action="test.html" method="get">
+        <label for="3kg">주문상품 <input type="text" id="3kg" value="상품용 3kg" readonly></label>
+        <br>
+        이름 <input type="text" name="name" placeholder="이름을 적으세요.">
+        <br>
+        배송주소 <input type="text" name="adress" id="adress" required>
+        <br>
+        이메일 <input type="email" name="email" id="email" required>
+        <br>
+        연락처 <input type="tel" name="tel" id="tel" required>
+        <br>
+        배송 지정 <input type="date" name="date" id="today" required>
+        <br>
+        <input type="submit" value="확인">
+    </form>
+    <script>document.getElementById('today').valueAsDate= new Date();</script>
+    <fieldset>
+        <legend>이벤트와 새로운 소식</legend>
+        <input type="radio" name="mail" id="maily" value="mailyes">
+        <label for="maily">메일 수신</label>
+        <input type="radio" name="mail" id="mailn" value="mailno" checked>
+        <label for="mailn">메일 수신 안함</label>
+        <textarea name="mailsend" id="mailsend" cols="40" rows="10"></textarea>
+    </fieldset>
     <br>
-    검색 <input type="search" name="검색" id="search">
-    <input type="submit" value="확인">
-    <p><input type="number" name="" id=""></p>
-    <li><input type="text"></li>
-    <br>
-    <input type="range" name="" id="">
-    <br>
-    <input type="date">
-    <br>
-    <input type="month">
-</fieldset>
-</form>
-<br>
-<form method="get" action="test.html" name="food" accept-charset="UTF-8" target="_blank" autocomplete="off">
-<fieldset>
-    <legend>로그인 폼</legend>
-    <p><label for="food">아이디 : <input type="text" name="로그인" id="user_id" size="10px" placeholder="적어봐"></label></p>
-    <p><label for="food">비밀번호 : <input type="password" name="비밀번호" id="user_pw" size="10px"></label></p>
-    <input type="submit" value="로그인">
-</fieldset>
-</form>
-<fieldset>
-    <legend>배송 정보</legend>
-    <ul>
-        <li>이름 <input type="text"></li>
-        <li>배송 주소 <input type="text"></li>
-        <li>이메일 <input type="text"></li>
-        <li>연락처 <input type="text"></li>
-    </ul>
-</fieldset>
-<fieldset>
-    <legend>product</legend>
-    <p><strong>choese your product</strong></p>
-    <ul>
-        <li><label for=""><input type="checkbox" name="prod" value="s_3">present 3kg</label></li>
-        <li><label for=""><input type="checkbox" name="prod" value="s_5">present 5kg</label></li>
-        <li><label for=""><input type="checkbox" name="prod" value="f_3">home 3kg</label></li>
-        <li><label for=""><input type="checkbox" name="prod" value="f_5">home 5kg</label></li>
-    </ul>
-    <p><strong>back choese</strong></p>
-    <ul>
-        <li><label for=""><input type="radio" name="gift" value="yes">back present</label></li>
-        <li><label for=""><input type="radio" name="gift" value="no">no back present</label></li>
-    </ul>
-</fieldset>
-<form action="test.html" method="get" name="login" accept-charset="UTF-8" target="_blank" autocomplete="off">
-    <h1>회원 가입을 환영합니다 !</h1>
-<fieldset>
-<legend>사용자 정보</legend>
-<ul>
-    <li><label for="uid">아이디</label><input type="text" id="uid" maxlength="6"></li>
-    <li><label for="uem">이메일</label><input type="text" id="uem"></li>
-    <li><label for="upw">비밀번호</label><input type="text" id="upw"></li>
-    <li><label for="pwc">비밀번호 확인</label><input type="text" id="pwc"></li>
-</ul>
-</fieldset>
-<fieldset>
-    <legend>이벤트의 새로운 소식</legend>
-    <ul>
-    <input type="radio" name="reci"> 메일 수신
-    <input type="radio" name="reci"> 메일 수신 안 함
-    </ul>
-</fieldset>
-<input type="button" value="가입하기">
-<input type="button" value="취소">
-</form>
-<form action="test.html" method="get">
-<ul>
-<li><input type="checkbox" name="pr3"> 선물용 3kg <input type="number" name="pr3" min="0" max="5"> 개 (최대 5개)</li>
-<li><input type="checkbox" name="pr5"> 선물용 5kg <input type="number" name="pr5" min="0" max="3"> 개 (최대 3개)</li>
-</ul>
-<input type="submit" value="주문">
-</form>
-<br>
-<input type="range" min="0" max="10" step="1" value="2">
-<input type="date" min="2024-05-01" max="2024-12-30">
-<br>
-<form method="get" action="test.html" name="food" accept-charset="UTF-8" target="_blank" autocomplete="off">
-<input type="url" id="url">
-<input type="submit" value="확인">
-</form>
-<br>
-<form action="test.html" method="get" accept-charset="UTF-8" target="_blank">
-<input type="email" name="email" id="email">
-<input type="image" src="cat1.jpg" alt="cat" style="width: 50px;">
-<input type="reset" value="취소">
-</form>
-<form action="test.html" method="get" target="_blank">
-<input type="button" value="공지 창 열기" onclick="window.open('기초설명3.html', '_blank', 'width=300px,height=400px')">
-</form>
-파일 업도르 <input autocapitalize="text">
+    상품선택 <select name="" id="" size="1" style="width: 70px; height: 30px; font-size: 10px;">
+        <option value="값1" selected>선물용 3</option>
+        <option value="값2">선물용 5</option>
+        <option value="값2">가정용 3</option>
+        <option value="값2">가정용 5</option>
+        <option value="값2">내용5</option>
+    </select>
+    <button type="submit">주문하기</button>
+    <button type="reset">취소하기</button>
 </body>
+
 </html>

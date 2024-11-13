@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <form action="test.html" method="get" accept-charset="UTF-8" target="_blank">
+    <fieldset>
+        <h1>예약정보</h1>
+        <table>
+            <colgroup>
+            <col style="width: 55px;">
+            <col>
+            <col>
+            </colgroup>
+            <tr>
+                <td><p><label for="name">이름</label></p></td>
+                <td><input type="text" name="name" id="n1" required></td>
+            </tr>
+            <tr>
+                <td><p><label for="tel">전화</label></p></td>
+                <td><input type="text" name="tel" id="t1" required></td>
+            </tr>
+            <tr>
+                <td><p><label for="email">이메일</label></p></td>
+                <td><input type="text" name="email" id="e1" required></td>
+            </tr>
+        </table>
+        <button type="submit">예약하기</button>
+    </fieldset>
+    </form>
+</body>
+</html>

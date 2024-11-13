@@ -1,8 +1,10 @@
 <form action="" name="" accept-charset="UTF-8" target="" method="" autocomplete="off"></form> 폼이란 독자적 태그 폼 형태를 만듬
 form의 method 에서 post와 get의 차이는 post가 더 안전성이 있음. 데이터를 보낼 때, 데이터를 숨김
-action에서 받은 서버의 프로그램을 가져옴    
+action에서 받은 서버의 프로그램을 가져옴  
+
 <fieldset></fieldset> 구역을 나눔
 <legend></legend> fieldset 구역의 이름을 지정함
+
 <label>이름<input type="number"></label> 라벨로 인풋값 타입을 받음
 사용할만한 input 값들
 text, password, search, url, checkbox, radio, tel, number,
@@ -11,3 +13,16 @@ range, date, month, submit, reset, image, button, file, hidden
 <input type="text" size="" value="" maxlength="">
 input과 함께 사용하는 것
 size, value(해당 값), maxlength(입력 최대값)
+
+<input type="text" name="" placeholder="">
+placeholder는 검색... 같은거
+모든 입력값들은 name을 꼭 붙일것
+
+<input type="reset" value="취소">
+리셋 버튼
+
+<input type="image" src="cat1.jpg" alt="cat" style="width: 50px;">
+submit과 같은 역할을 함
+
+<input type="button" value="공지 창 열기" onclick="window.open('기초설명3.html', '_blank', 'width=300px,height=400px')">
+윈도우 창으로 새로 연다. 버튼을 누르면 프로그램 연결, 새창, 크기

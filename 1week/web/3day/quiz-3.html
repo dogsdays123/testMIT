@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <form action="test.html" method="get" accept-charset="UTF-8" target="_blank">
+    <h1>회원가입을 환영합니다</h1>
+        <fieldset>
+        <legend>사용자 정보</legend>
+        <li><label for="uid">아이디</label><input type="text" name="uid" id="uid" placeholder="4자 ~ 10자 사이, 공백 없이"></li>
+        <li><label for="uem">이메일</label><input type="email" name="uem" id="uem"></li>
+        <li><label for="upw">비밀번호</label><input type="password" name="upw" id="upw" placeholder="문자의 숫자, 특수 기호 포함"></li>
+        <li><label for="upwc">비밀번호 확인</label><input type="password" name="upwc" id="upwc"></li>
+        <li>가입 경로
+            <select name="select" id="select">
+            <option value="1">블로그</option>
+            <option value="2">카페</option>
+            <option value="3">그 외</option>
+            </select>
+        </li>
+        <li><label for="textarea">메모</label><textarea name="textarea" id="textarea" cols="40px" rows="4px" placeholder="남길 말씀이 있다면 여기에"></textarea></li>
+    </fieldset>
+    <fieldset>
+        <legend>이벤트와 새로운 소식</legend>
+        메일 수신 <input type="radio" name="send">
+        메일 수신 안 함 <input type="radio" name="send">
+    </fieldset>
+    <button type="submit">가입하기</button>
+    <button type="reset">취소</button>
+    </form>
+</body>
+</html>

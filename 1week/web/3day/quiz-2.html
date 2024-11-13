@@ -14,50 +14,50 @@
     <form action="test.html" method="get" accept-charset="UTF-8" target="_blank">
     <fieldset>
         <h1>프런트엔드 개발자 지원서</h1>
-        <p>(HTML, CSS, javascript)의 기술들을 이해하고 실무 경험이 있는 분을 찾습니다.</p>
+        <p>(HTML, CSS, javaScript)의 기술들을 이해하고 실무 경험이 있는 분을 찾습니다.</p>
         <hr>
         <h3>개인 정보</h3>
         <table>
             <colgroup>
-            <col style="width: 40px;">
-            <col style="width: 50px;">
-            <col style="width: 100px;">
+                <col style="width: 40px;">
+                <col style="width: 50px;">
+                <col style="width: 100px;">
             </colgroup>
             <tr>
                 <td></td>
-                <td>이름</td>
-                <td><label for="name"></label><input type="text" name="name" id="name" placeholder="공백 없이 입력하세요" autofocus required></td>
+                <td><label for="name">이름</label></td>
+                <td><input type="text" name="name" id="name" placeholder="공백 없이 입력하세요" autofocus required></td>
             </tr>
             <tr>
                 <td></td>
-                <td>연락처</td>
-                <td><label for="tel"></label><input type="text" name="tel" id="tel" maxlength="11" placeholder="공백, - 없이 입력하세요" autofocus required></td>
+                <td><label for="tel">연락처</label></td>
+                <td><input type="text" name="tel" id="tel" maxlength="11" placeholder="공백, - 없이 입력하세요" autofocus required></td>
             </tr>
         </table>
         <br>
         <h3>지원 분야</h3>
         <table>
             <colgroup>
-            <col style="width: 40px;">
-            <col>
-            <col>
+                <col style="width: 40px;">
+                <col>
+                <col>
             </colgroup>
             <tr>
-                <td><p><label for="webP"></label></p></td>
-                <td><input type="radio" name="radioselect" id="webP" required> 웹 퍼블리싱</td>
+                <td><p></p></td>
+                <td><input type="radio" name="radioselect" id="webP" required><label for="webP"> 웹 퍼블리싱</label></td>
             </tr>
             <tr>
-                <td><p><label for="webA"></label></p></td>
-                <td><input type="radio" name="radioselect" id="webA"> 웹 애플리케이션 개발</td>
+                <td><p></p></td>
+                <td><input type="radio" name="radioselect" id="webA"><label for="webA"> 웹 애플리케이션 개발</label></td>
             </tr>
             <tr>
-                <td><p><label for="upgrade"></label></p></td>
-                <td><input type="radio" name="radioselect" id="upgrade"> 개발 환경 개선</td>
+                <td><p></p></td>
+                <td><input type="radio" name="radioselect" id="upgrade"><label for="upgrade"> 개발 환경 개선</label></td>
             </tr>
         </table>
         <br>
-        <h3>지원 동기</h3>
-        <label for="popo"></label><textarea name="popo" id="popo" cols="60px" rows="5px" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+        <h3><label for="popo">지원 동기</label></h3>
+        <textarea name="popo" id="popo" cols="60px" rows="5px" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
         <br>
         <button type="submit">접수하기</button>
         <button type="reset">다시쓰기</button>

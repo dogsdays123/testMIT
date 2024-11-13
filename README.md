@@ -29,4 +29,10 @@
 			<li>파일확인</li>
 		</ul>
 	</div>
+	<div>
+		<a id="3days-url" href="https://github.com/dogsdays123/testMIT/blob/main/1week/web/3day/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%853.html">3일차</a>
+		<ul>
+			<li>링크따라가기</li>
+			<li>파일확인</li>
+	</div>
 </html>

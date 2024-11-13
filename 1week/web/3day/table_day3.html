@@ -4,124 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <!-- <style>
-        table, th, td {
-            border: 1px solid #000;
-            border-collapse: collapse;
-        }
-        th, td {padding: 10px 20px;}
-    </style> -->
 </head>
 <body>
-    <form action="test.html" name="food" accept-charset="UTF-8" target="" method="post" autocomplete="off">
-    <fieldset>
-    <legend>다양한 음식</legend>
-    <table border="1">
-        <colgroup>
-        <col style="width: 70px; background-color: rgb(248, 240, 168);">
-        <col>
-        <col>
-        <col>
-        </colgroup>
-        <tr>
-            <th rowspan="2">한식</th>
-            <td style="width: 100px;">백반</td>
-            <td>1000원</td>
-        </tr>
-        <tr>
-            <td>볶음밥</td>
-            <td>2000원</td>
-        </tr>
-        <tr>
-            <th rowspan="2">중식</th>
-            <td>자장면</td>
-            <td>1000원</td>
-        </tr>
-        <tr>
-            <td>짬뽕</td>
-            <td>1500원</td>
-        </tr>
-        <tr>
-            <th rowspan="2">분식</th>
-            <td>김밥</td>
-            <td>500원</td>
-        </tr>
-        <tr>
-            <td>라면</td>
-            <td>500원</td>
-        </tr>
-    </table>
-    <br>
-    <br>
-    원하는 음식을 선택하세요. <br>
-    <table border="1">
-        <colgroup>
-        <col>
-        <col>
-        <col>
-        <col>
-        </colgroup>
-        <tr>
-            <th colspan="2">한식</th>
-            <th colspan="2">중식</th>
-        </tr>
-        <tr>
-            <td><label for="">백반<input type="checkbox"></label></td>
-            <td><label for="">김밥<input type="checkbox"></label></td>
-            <td><label for="">자장면<input type="checkbox"></label></td>
-            <td><label for="">짬뽕<input type="checkbox"></label></td>
-        </tr>
-        <tr>
-            <th colspan="4">원하는 음식이 없다면 아래에 적어주세요.</th>
-        </tr>
-        <tr>
-            <th colspan="4"><label for=""><input type="text" style="width: 300px;"></label></th>
-        </tr>
-    </table>
-    <br>
-    검색 <input type="search" name="검색">
-    <input type="submit" value="확인">
-    <p><input type="number" name="" id=""></p>
-    <li><input type="text"></li>
-    <br>
-    <input type="range" name="" id="">
-    <br>
-    <input type="date">
-    <br>
-    <input type="month">
-</fieldset>
-<br>
-<fieldset>
-    <legend>로그인 폼</legend>
-    <p><label for="">아이디 : <input type="text" id="user_id" size="10px"></label></p>
-    <p><label for="">비밀번호 : <input type="password" id="user_pw" size="10px"></label></p>
-    <input type="submit" value="로그인">
-</fieldset>
-<fieldset>
-    <legend>배송 정보</legend>
-    <ul>
-        <li>이름 <input type="text"></li>
-        <li>배송 주소 <input type="text"></li>
-        <li>이메일 <input type="text"></li>
-        <li>연락처 <input type="text"></li>
-    </ul>
-</fieldset>
-<fieldset>
-    <legend>product</legend>
-    <p><strong>choese your product</strong></p>
-    <ul>
-        <li><label for=""><input type="checkbox" name="prod" value="s_3">present 3kg</label></li>
-        <li><label for=""><input type="checkbox" name="prod" value="s_5">present 5kg</label></li>
-        <li><label for=""><input type="checkbox" name="prod" value="f_3">home 3kg</label></li>
-        <li><label for=""><input type="checkbox" name="prod" value="f_5">home 5kg</label></li>
-    </ul>
-    <p><strong>back choese</strong></p>
-    <ul>
-        <li><label for=""><input type="radio" name="gift" value="yes">back present</label></li>
-        <li><label for=""><input type="radio" name="gift" value="no">no back present</label></li>
-    </ul>
-</fieldset>
-</form>
+    <form method="get" action="test.html" name="food" accept-charset="UTF-8" target="_blank" autocomplete="off">
+        <fieldset>
+            <legend>로그인 폼</legend>
+            <p><label for="food">아이디 : <input type="text" id="user_id" size="10px"></label></p>
+            <p><label for="food">비밀번호 : <input type="password" id="user_pw" size="10px"></label></p>
+            <input type="submit" value="로그인">
+        </fieldset>
+        </form>
 </body>
 </html>

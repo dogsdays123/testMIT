@@ -9,12 +9,12 @@
 <!DOCTYPE html>
 <html>
 	<header>
-	<script>
-document.getElementById('today').valueAsDate= new Date();
-	</script>
 		<h1>1주차</h1>
 	</header>
 	<body>
+		<script>
+document.getElementById('today').valueAsDate= new Date();
+	</script>
 		<input type="text" value="today">
     <a id="raw-url" href="https://github.com/dogsdays123/testMIT/blob/main/1week/web/1day/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%85.html">1일차</a>
 		<main class="1일차">

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 // << 비트연산자 c = 2 일때 c <<= 3 을 하면 c * 2^3의 식이 됨.
@@ -37,18 +38,15 @@ public class Application {
   public static String ex_4() {
     int x = 0;
     int z = 0;
-    int persent = 1000;
-    while (x < persent) {
+    int percent = 1000;
+    while (x < percent) {
       x++;
-      int c = (int) (Math.random() * persent);
-      if (0 < c || c < 100) {
+      int c = (int) (Math.random() * percent);
         if (c % 3 == 0 && c % 2 == 0 && c % 7 != 0) {
-          z++;
+            z++;
         }
-      }
     }
-    String answer = "통과의 확률은 : " + ((z / 10) % 100) + "입니다.";
-    return answer;
+      return "통과의 확률은 : " + ((z / 10) % 100) + "입니다.";
   }
 
   public static String ex_5() {
@@ -56,8 +54,9 @@ public class Application {
     char ch = ' ';
     System.out.println("문자를 입력하세요 >");
     String input = scanner.nextLine();
+    scanner.close();
     ch = input.charAt(0);
-    String answer = new String();
+    String answer = "";
     if (('a' <= ch && ch <= 'z') || ('A' <= ch && ch <= 'Z')) {
       if ('a' <= ch && ch <= 'z') {
         answer = " < 이건 소문자야";
@@ -213,7 +212,7 @@ public class Application {
       Seungwon2: for (int j = 0; j < 5; j++) {
         System.out.printf("i = %d, j = %d%n", i, j);
         if (i == 5 && j == 3) {
-          System.out.printf("이게멈추네 ㅋㅋ");
+          System.out.print("이게멈추네 ㅋㅋ");
           break Seungwon1;
         }
       }
@@ -254,18 +253,18 @@ public class Application {
           }
         }
       } else {
-        System.out.printf("잘못된 값입니다. 다시 선택해주세요.");
+        System.out.print("잘못된 값입니다. 다시 선택해주세요.");
       }
     }
   }
 
   public static void ex_19() {
-    System.out.printf("아무키나 눌러서 주사위를 던져!");
+    System.out.print("아무키나 눌러서 주사위를 던져!");
     Scanner scanner = new Scanner(System.in);
     String tmp = scanner.nextLine();
     int[] i = new int[2];
     if (tmp != null) {
-      frist: for (int z = 0;; ++z) {
+      first: for (int z = 0;; ++z) {
         i[0] = (int) (Math.random() * 6) + 1;
         i[1] = (int) (Math.random() * 6) + 1;
         if (i[0] + i[1] == 6) {
@@ -274,12 +273,21 @@ public class Application {
           System.out.printf("%d", z);
           break;
         }
-        System.out.printf("실패!");
+        System.out.print("실패!");
       }
     }
   }
 
   public static void ex_20() {
+  int[] score = new int[]{1,2,3,4,5,6,7,8,9,10};
+  String test = score.length + "";
+  System.out.println(test);
+  for(int i = 0; i < score.length; i++) {
+    System.out.println(score[i]);
+  }
+  String[] ch = {"hi", "bye", "Hello"};
+  System.out.println(ch[0]);
 
+    System.out.println(Arrays.toString(score));
   }
 }

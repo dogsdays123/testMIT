@@ -1,0 +1,178 @@
+/*a 하이퍼링크 앵커셋*/
+a{
+    text-decoration-line: none;
+}
+a:link{
+    color: rgb(255, 255, 255);
+}
+a:visited{
+    color: rgb(255, 255, 255);
+}
+a:hover{
+    color: pink;
+}
+a:active{
+    color: rgb(255, 255, 255);
+}
+/*a 하이퍼링크 앵커셋*/
+
+button{
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 25px;
+}
+
+/* 테이블값 */
+table{
+    caption-side: bottom;
+    border-spacing: 10% 10%;
+    /* border: 1% dotted rgb(255, 255, 255); */
+}
+td, th{
+    /* border: 1px dotted rgb(255, 255, 255); */
+    line-height: 100%;
+    font-weight: bold;
+}
+.tablecollapse{
+    border-collapse: collapse;
+    border-spacing: 1px 1px;
+}
+.tablepersentsize{
+    width: 100%;
+    height: 100%;
+}
+/* 테이블값 */
+
+/* ul{
+    list-style-type: none;
+} */
+
+li{
+    list-style-type: none;
+}
+
+.childss {
+    width: 500px; 
+    height: 40px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    /* 수직 중앙 정렬하기 */
+    letter-spacing: 0.1px;
+    text-indent: 10px;
+}
+
+.bold{
+    font-weight: 1000;
+}
+.fontcolorwhite{
+    color: rgba(255, 255, 255, 0.63);
+}
+.wide{
+    width: 100%;
+    height: 120px;
+}
+.wide2{
+    height: 30px;
+}
+.wide3{
+    width: 400px;
+}
+.heid1{
+    height: 100px;
+}
+.GKfont {
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 500;
+    font-size: 70px;
+    font-style: normal;
+}
+.GKfont2 {
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 400;
+    font-size: 120%;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    line-height: 150%;
+}
+.GKfont3 {
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 400;
+    font-size: 100%;
+    font-style: normal;
+    letter-spacing: 0.2em;
+}
+.GEfont {
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 150%;
+}
+.boxmain{
+    box-sizing: border-box;
+    width: 1920px;
+    height: 250px;
+    padding: 10px;
+    border: 10px solid rgb(255, 255, 255);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.445);
+    border-radius: 10px;
+}
+.box1{
+    box-sizing: border-box;
+    width: 1920px;
+    height: 500px;
+    padding: 20px;
+    border: 10px solid white;
+    border-top-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+}
+.box2{
+    box-sizing: content-box;
+    width: 100%;
+    border: 10px solid rgb(255, 255, 255);
+}
+.boxtest{
+    box-shadow: 2px 2px 2px white inset;
+}
+.box3{
+    box-sizing: border-box;
+    width: 1920px;
+    height: 500px;
+    padding: 20px;
+}
+
+.wideflower {
+    float:right;
+    width: 50%;
+}
+
+.shadow1{
+    text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.377);
+}
+.shadow2{
+    text-shadow: 7px -7px 20px rgba(255, 255, 255, 0.404);
+}
+  
+.center {
+    text-align: center;
+}
+
+#margintest{
+    width: 700px;
+    margin: 50px;
+}
+
+#margintest2{
+    margin-top: 50px;
+}
+
+#holespace{
+    padding: 5%;
+}
+
+#background{
+    background-color: rgb(0, 0, 0);
+}

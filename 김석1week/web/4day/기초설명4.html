@@ -1,0 +1,171 @@
+.bold{
+    font-weight: 1000;
+}
+css용어 class를 지정함(.xxx)
+
+#wide{
+    width: 220px;
+    height: 45px;
+}
+id를 지정함(#xxx)
+
+사용할 때는 html에서 <p id="" class=""></p>
+이와같이 사용
+
+
+----------------하이퍼링크-------------------
+a{
+    text-decoration-line: none;
+}
+라인지우기
+
+a:link{
+    color: rgb(255, 255, 255);
+}
+링크컬러바꾸기
+
+a:visited{
+    color: rgb(255, 255, 255);
+}
+이미 누른
+
+a:hover{
+    color: pink;
+}
+마우스인
+
+a:active{
+    color: rgb(255, 255, 255);
+}
+클릭시
+----------------하이퍼링크-------------------
+
+
+----------------텍스트-------------------
+color, width, height, margin, padding,
+font weight, font-family, font-size, 등이 있음
+
+text-align 텍스트 정렬 속성
+text-align: start, end, left, right, center, justify, match-parent
+
+line-height: 1px, 1.0, 1% 등
+줄 높이를 지정함 주로 height와 같은 값으로 설정
+
+text-decoration: none, underline, overline, line through
+텍스트에 밑줄, 윗줄 취소선 등등
+
+text-shadow: none, <가로거리>, <세로거리>, <번짐 정도>, <색상>
+
+text-transform: capitalize, uppercase, lowercase, full-width
+첫 번째 대문자, 모든 글자 대문자, 모든 글자 소문자, 전각 문자 변환
+
+letter-spacing: 1px, 1em, 1%
+자간 조절(글자간 공백)
+
+.child {
+    width: 500px; 칸 가로
+    height: 50px; 칸 세로
+    background-color: rgb(0, 0, 0);
+    color: white; 글자 색
+    /* 수직 중앙 정렬하기 */
+    position: absolute;
+    top: 50%; 위에서 50%
+    letter-spacing: 0.1px; 자간
+    text-indent: 10px; 들여쓰기
+}
+----------------텍스트-------------------
+
+
+----------------리스트-------------------
+li{
+    list-style-type: none;
+}
+li의 불릿을 사용하지 않음
+
+ul{
+    list-style-image: url('이미지url');
+}
+목록의 불릿으로 사용할 이미지
+
+.inside{
+    list-style-position: inside, outside;
+}
+들여쓰기 = inside는 안으로 들여씀, outside 기본값
+----------------리스트-------------------
+
+
+----------------테이블-------------------
+caption
+table{
+    caption-side: top, bottom
+}
+캡션을 표시하는 위치
+
+table{
+    border-spacing: 수평거리 수직거리
+}
+표의 전체여백을 설정
+
+table{
+    border-collapse:collapse, separate
+}
+표와 셀의 테두리를 합친다, 따로 표시한다
+----------------테이블-------------------
+
+
+----------------박스요-------------------
+.wideflower {
+    float:right;
+    width: 50%;
+}
+float를 통해 가로열로 맞춘다
+
+.box1{
+    box-sizing: border-box;
+    width: 1920px;
+    height: 500px;
+    padding: 20px;
+    border: 10px solid rgb(255, 255, 255);
+}
+box-sizing을 통해 고정 전체 너비를 설정한다
+
+.testbutton{
+    box-shadow: 수평 수직 흐림 번짐 색상 inset
+}
+box-shadow를 통해 박스에 효과를 준다 (inset그림자 안쪽으로)
+
+bordertest{
+    border-width: thin thin medium thick;
+    border-color: red;
+    border-top: blue;
+    border-radius: 10px;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+border-width: 크기 (thin, medium, thick)
+border-color: 전체 색
+border-top(bottom, left, right): 위치에 따른 설정
+border-radius: 꼭지점 둥글기
+border-bottom-left-radius:
+border-bottom-right-radius: 꼭지점 지정 둥글퍼센트
+----------------박스요-------------------
+
+
+----------------전체요-------------------
+#margintest{
+    margin: 30px;
+    margin: 30px 20px;
+    margin: 30px 10px 20px;
+    margin: 20px auto;
+}
+margin: x 상하좌우 크기
+margin: x y 위아래x 좌우y
+margin: x y z 위x 좌우y 아래z
+margin: x auto 위아래x 좌우auto
+마진중첩 : 마진은 위아래로는 겹치지만 좌우로는 겹치지않는다.
+
+모든 형태는 겹치지 않는 것이 중요
+겹친다면 우선순위에 따라 id > class 순으로 적용
+만약 문제가 있다면 우선순위나 겹치는 
+예를들어 : width 300을 줬는데 또 다시 width 700을 주는 경우이다.
+----------------전체요-------------------

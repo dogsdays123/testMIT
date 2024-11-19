@@ -50,6 +50,7 @@ text-align: start, end, left, right, center, justify, match-parent
 
 line-height: 1px, 1.0, 1% 등
 줄 높이를 지정함 주로 height와 같은 값으로 설정
+글자가 박스에 맞게 설치할수도 있음
 
 text-decoration: none, underline, overline, line through
 텍스트에 밑줄, 윗줄 취소선 등등
@@ -168,4 +169,64 @@ margin: x auto 위아래x 좌우auto
 겹친다면 우선순위에 따라 id > class 순으로 적용
 만약 문제가 있다면 우선순위나 겹치는 
 예를들어 : width 300을 줬는데 또 다시 width 700을 주는 경우이다.
+
+boxCenter{
+    display: flex;
+    justify-content: center;
+}
+박스 내의 중앙정렬
 ----------------전체요-------------------
+
+overflow-x: hidden; 가로스크롤 숨김
+
+
+----------------이미지-------------------
+img{
+    float: left, right, none;
+}
+흐르기를 사용해 이미지와 글자가 겹치게 만들 수 있음
+근데 box까지 float 해버려서 box크기를 얘보다 크게 지정해야 함
+
+.clear{
+    clear: both;
+}
+그리고 float 사용했을 때, 요소가 다음 태그에도 전달되어서
+clear를 사용해야함.
+
+---백그라운드이미지---
+.backgroundimage{
+   1 background-image: url(popcat.jpg);
+   2 background-repeat: repeat-x, repeat-y, no-repeat
+   3 background-position: 수평위치 수직위치;
+   4 background-origin: content-box, padding-box, border-box;
+   5 background-attachment: scroll, fixed;
+   6 background-size: auto, contain, cover, 크기, 백분율 
+}
+1 백그라운드 이미지
+2 이미지 반복
+3 수평 > left center right 백분율 길이값
+수직 > top center bottom 백분율 길이값
+4 내용부분만 배경표시 / 패딩부분까지 배경표시 / 테두리까지 배경표시
+5 스크롤 기본값 / fixed 화면 고정
+stiky같은거 아닐까 (광고용)
+6 사이즈 기본 / 요소 안에 맞추기 / 요소를 덮도록 맞추기
+
+backALL{
+    background: url() no-repeat left top fixed;
+}
+백그라운드 하나로 전체 컨트롤 가능(사이즈빼고)
+
+(백이미지는 어디에서나 사용가능)
+---백그라운드이미지---
+----------------이미지-------------------
+
+
+----------------포지셔닝-------------------
+#position{
+    position: absolute;
+    right: 50px;
+    top: 30px;
+}
+절대적 포지션 기준
+right 에서 50px 떨어지게
+top 에서 30px 떨어지게 위치한다. %로도 표현가능

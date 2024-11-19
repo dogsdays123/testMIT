@@ -20,7 +20,7 @@ a:active{
 /* html{
     background-color: rgb(0, 0, 0);
 } */
-/* 
+
 body{
     min-height: 100vh;
     max-width: 1920px;
@@ -28,7 +28,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     /* overflow-x: hidden; */
-} */
+}
 /* 메인 태그 */
 
 button{
@@ -45,7 +45,6 @@ table{
     /* border: 1% dotted rgb(255, 255, 255); */
 }
 td, th{
-    border: 1px dotted rgb(0, 0, 0);
     padding: 10px;
     line-height: 100%;
     font-weight: bold;
@@ -53,28 +52,40 @@ td, th{
 .tablecollapse{
     border-collapse: collapse;
     border-spacing: 1px 1px;
-    border: 1px dotted rgb(0, 0, 0);
 }
 .tablepersentsize{
     width: 100%;
     height: 100%;
 }
+.borderG{
+    color: white;
+    border: 1px solid rgb(172, 172, 172);
+}
 /* 테이블값 */
 
+/* 목록 */
 /* ul{
     list-style-type: none;
 } */
 
-ul li{
+.lidis{
+    border: 1px solid white;
     list-style-type: none;
     display: inline-block;
-    width: 500px;
+    width: 200px;
     height: 40px;
     line-height: 40px;
     text-align: center;
     margin: 10px;
-    border: 1px solid #ffffff;
 }
+/* 목록 */
+
+/* 이미지 */
+/* img{
+    float: left;
+    margin-right: 40px;
+} */
+/* 이미지 */
 
 .bold{
     font-weight: 1000;
@@ -123,14 +134,21 @@ ul li{
     font-style: normal;
     font-size: 150%;
 }
+
+/* 박스 */
 .boxmain{
     box-sizing: border-box;
     width: 1900px;
-    height: 250px;
+    height: 150px;
     padding: 10px;
     border: 10px solid rgb(255, 255, 255);
     border-bottom: 3px solid rgba(255, 255, 255, 0.445);
     border-radius: 10px;
+}
+.basicbox{
+    box-sizing: border-box;
+    width: 1920px;
+    height: 400px;
 }
 .box1{
     box-sizing: border-box;
@@ -154,9 +172,42 @@ ul li{
 .box3{
     box-sizing: border-box;
     width: 1920px;
-    height: 500px;
+    height: 100px;
     padding: 20px;
 }
+.boxxx1{
+    background: rgb(199, 55, 55);
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+}
+.boxxx2{
+    background: rgb(55, 146, 199);
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+.clear{
+    clear: both;
+}
+/* 박스 */
+
+/* 위치선정 */
+#positionParent{
+    position: relative;
+    top: 80px;
+    right: 50px;
+    margin: 0 auto;
+}
+#positionChild{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+/* 위치선정 */
+
 
 .wideflower {
     float:right;

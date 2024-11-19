@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 한글형폰트 -->
-    <link rel="stylesheet" href="css4.css">
+    <link rel="stylesheet" href="css5.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
@@ -15,6 +15,17 @@
     <!-- 아이콘폰트 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+    <style>
+        html{
+            /* background-image: url(popcat.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed; */
+            /* background: url(popcat.jpg) left top no-repeat fixed;
+            background-size: cover; */
+            background-color: rgb(0, 0, 0);
+    }
+    </style>
+
     <title>Document</title>
 </head>
 <body>
@@ -33,7 +44,6 @@
         </tr>
     </table>
     </div>  
-</body>
 <div style="padding: 2%;" class="box1">
     <table class="tablepersentsize wideflower">
     <!-- <table class="tablecollapse tablepersentsize" border="1px" style="border-color: wheat;"> -->
@@ -88,8 +98,25 @@
             </tr>
         </table>
 </div>
-<div class="fontcolorwhite center box3" id="margintest2">
+
+<div class="fontcolorwhite center box3 borderG" id="margintest2">
     <button type="submit">내용</button>
     <button type="submit">내용</button>
 </div>
+
+<div class="borderG boxxx1" id="positionParent">박스1
+<div class="borderG boxxx2" id="positionChild">박스2</div>
+</div>
+
+<div>
+    <ul style="color: white; box-sizing: border-box; width: 1920px;" class="center">
+        <li class="lidis">123</li>
+        <li class="lidis">123</li>
+    </ul>
+    <ul style="color: white; box-sizing: border-box; width: 1920px;" class="center">
+        <li class="lidis">123</li>
+        <li class="lidis">123</li>
+    </ul>
+</div>
+</body>
 </html>

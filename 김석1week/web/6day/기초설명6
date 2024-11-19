@@ -1,0 +1,38 @@
+1@media screen and (max-width: 600px) {
+    .body1 {
+        color: red;
+    }
+}
+2@media (orientation: portrait or landscape) {
+    .body2 {
+        color: aqua;
+    }
+}
+3@media (hover: hover) {
+    .body3{
+        color: rgb(165, 117, 255);
+    }
+}
+4@media screen and (min-width: 600px) and (orientation: portrait) {
+    .body3{
+        color: rgb(165, 117, 255);
+    }
+}
+5@media screen and (min-width: 600px), screen and (orientation: portrait) {
+    .body3{
+        color: rgb(165, 117, 255);
+    }
+}
+6@media not all and (orientation: landscape) {
+    body {
+      color: blue;
+    }
+}
+
+@media를 통해 불값 설정가능
+1 width가 600 이하라면 red로 변경
+2 가로세로 판단하여 변경
+3 요소 위에 마우스를 올릴 수 있는지
+4 and를 사용하여 and 문으로 사용
+5 ,를 사용하여 or 문으로 바꿀 수 있음
+6 not을 통해서 portrait일 경우에만 블루로

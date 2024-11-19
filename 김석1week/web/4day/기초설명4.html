@@ -212,9 +212,25 @@ stiky같은거 아닐까 (광고용)
 6 사이즈 기본 / 요소 안에 맞추기 / 요소를 덮도록 맞추기
 
 backALL{
-    background: url() no-repeat left top fixed;
-}
-백그라운드 하나로 전체 컨트롤 가능(사이즈빼고)
+   1 background: url() no-repeat left top fixed;
+   2 background: linear-gradient(to left top, white, black);
+   3 background: linear-gradient(to left top, white, black, white);
+   4 background: radial-gradient(circle, white, black, blue);
+   5 background: repeating-radial-gradient(circle, white, orange 10%);
+   6 background: repeating-radial-gradient(circle, white, white 3%, orange 3%, orange 6%);
+}  
+1 백그라운드 하나로 전체 컨트롤 가능(사이즈빼고)
+2 linear-gradient를 통해 그라디언트 표현가능
+방향(deg각도도 가능) / 시작색 / 끝색
+3 방향/ 시작색 / 중지점색상과위치 / 끝색
+여러색으로 그라디언트 가능
+4 타원형 = 모양 지정안하면 타원형
+모양 / 색1 / 색2/ 색3
+(circle at x% y%) 를 설정하면 원의 위치를 변형함
+3색의 %를 수정하여 크기를 조절할 수 있음
+5 repeating을 추가하면 반복 그라데이션
+6 정확한 지점을 명시해줘야 깔끔하게 나옴
+ex) 0~3%까지 흰색 / 3~3%까지 흰-주 / 3~6%까지 주황색
 
 (백이미지는 어디에서나 사용가능)
 ---백그라운드이미지---

@@ -1,0 +1,24 @@
+a{
+    text-decoration-line: none;
+}
+a:link{
+    color: rgb(255, 255, 255);
+}
+a:visited{
+    color: rgb(255, 255, 255);
+}
+a:hover{
+    color: pink;
+}
+a:active{
+    color: rgb(255, 255, 255);
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.textsize{
+    font-size: 1.6rem;
+}

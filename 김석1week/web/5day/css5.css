@@ -176,7 +176,7 @@ td, th{
     padding: 20px;
 }
 .boxxx1{
-    background: rgb(199, 55, 55);
+    background: repeating-radial-gradient(circle, white, white 3%, orange 3%, orange 6%);
     width: 300px;
     height: 300px;
     line-height: 300px;

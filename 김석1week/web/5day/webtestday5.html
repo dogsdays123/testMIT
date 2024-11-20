@@ -6,19 +6,21 @@
     <title>Responsive Web Design Task: Task</title>
     <link rel="stylesheet" href="newCss.css" />
     <style>
+      @import url(newCss.css) only screen and (min-width: 321px) and (max-width:768px);
       * {
         box-sizing: border-box;
       }
 
       html {
         font:
-          1.2em/1.4 Arial,
+          1.0rem/1.4 Arial,
           Helvetica,
           sans-serif;
       }
 
       body {
         padding: 0 0 1em;
+        height: 100vh;
       }
 
       header {
@@ -36,8 +38,7 @@
       header a {
         color: #fff;
         text-decoration: none;
-        display: block;
-        padding: 0.5em 1em;
+        padding: 0.5em 0.5em;
       }
 
       header .title {
@@ -51,11 +52,66 @@
         padding: 0 1em;
       }
 
+      aside {
+        width: 250px;
+        height: 1000px;
+        background-color: black;
+        color: white;
+        padding: 10px 10px;
+        margin: 10px 0px 0px 10px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        float: right;
+      }
+
+      @media screen and (max-width: 768px) {
+      aside {
+      width: 100px;
+        }
+      }
+
+      @media screen and (min-width: 40em)
+      {
+        .header1 {
+          display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 10px;
+        }
+
+      nav ul {
+        display: flex;
+        margin-top: 15px;
+      }
+
+      nav ul li {
+        flex: 1;
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
       .cards {
         list-style: none;
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
       }
+    }
+
+    @media not screen and (max-width: 500px){
+      .cards {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 8px;
+      }
+    }
 
       .cards li {
         border: 5px solid #000;
@@ -78,6 +134,7 @@
         border: 5px solid #000;
         padding: 0.5em 1em;
         color: #fff;
+        padding: 10px;
       }
     </style>
   </head>
@@ -99,7 +156,12 @@
         </ul>
       </nav>
     </header>
-
+    <aside class="sidebar">
+      <p>
+        Have you discovered all of the other excellent content on this
+        website?
+      </p>
+    </aside>
     <main>
       <article>
         <h1>This is the main heading</h1>
@@ -113,7 +175,7 @@
           courgette tatsoi pea sprouts fava bean collard greens dandelion okra
           wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
         </p>
-
+      <div>
         <ul class="cards">
           <li>
             <h2>Card One</h2>
@@ -162,13 +224,8 @@
             </div>
           </li>
         </ul>
+      </div>
       </article>
-      <aside class="sidebar">
-        <p>
-          Have you discovered all of the other excellent content on this
-          website?
-        </p>
-      </aside>
     </main>
   </body>
 </html>

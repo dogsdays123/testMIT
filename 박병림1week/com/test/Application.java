@@ -1,3 +1,4 @@
+package com.test;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -44,6 +45,7 @@ public class Application {
         // ex_30();
         //ex_31();
         //ex_32();
+        ex_33();
     }
 
     public static String ex() {
@@ -543,5 +545,27 @@ public class Application {
         String[][] c = new String[][]{{"1", "2", "3"}, {"4", "5", "6"}};
         System.out.println(Arrays.equals(b, c));
         System.out.println(Arrays.deepEquals(b, c));
+    }
+
+    public static void ex_33() {
+        String str1 = "*";
+        int size = 10;
+        int sizenum = size - 1;
+        int sizenum2 = 1;
+        for (int i = 0; i < size; i++) {
+            System.out.printf(" ".repeat(sizenum) + str1.repeat(sizenum2) + "%n");
+            sizenum2 += 2;
+            sizenum -= 1;
+        }
+
+        sizenum = size - 1;
+        sizenum2 = 1;
+        int sizequ = 0;
+        for (int i = size; i > 0; --i) {
+            sizequ = ((sizenum*2) -1);
+            System.out.printf(" ".repeat(sizenum2) + str1.repeat((sizequ)) + "%n");
+            sizenum2 += 1;
+            sizenum -= 1;
+        }
     }
 }

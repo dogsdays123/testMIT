@@ -548,24 +548,15 @@ public class Application {
     }
 
     public static void ex_33() {
-        String str1 = "*";
-        int size = 10;
-        int sizenum = size - 1;
-        int sizenum2 = 1;
-        for (int i = 0; i < size; i++) {
-            System.out.printf(" ".repeat(sizenum) + str1.repeat(sizenum2) + "%n");
-            sizenum2 += 2;
-            sizenum -= 1;
-        }
-
-        sizenum = size - 1;
-        sizenum2 = 1;
-        int sizequ = 0;
-        for (int i = size; i > 0; --i) {
-            sizequ = ((sizenum*2) -1);
-            System.out.printf(" ".repeat(sizenum2) + str1.repeat((sizequ)) + "%n");
-            sizenum2 += 1;
-            sizenum -= 1;
+        int size = 6;
+        int num = 1;
+        for(int i = 0; i < (size/2) + 1; i++) {
+            String str1 = "";
+            String str2 = "";
+            for(int j = 0; j < (size/2) + 1 - i; j++) {str1 += " ";}
+            for(int j = 0; j < num; j++) {str2 += "*";}
+            System.out.println(str1 + str2);
+            num += 2;
         }
     }
 }

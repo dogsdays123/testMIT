@@ -24,7 +24,8 @@ class Car {
 }
 
 class Student {
-    static String[][] studentIndex = {{"type", "mathName", "preview"},
+    static String[][] studentIndex = {
+            {"type", "mathName", "preview"},
             {"String", "name", "학생이름"},
             {"int", "ban", "반"},
             {"float", "class", "클래스"}};

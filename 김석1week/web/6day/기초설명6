@@ -58,3 +58,50 @@ div 박스 범위 밖으로 글자가 나오지 않게 함
     min-height: 100vh;
 }
 어떠한 값을 전체화면 크기 비례로 맞추고 싶을때, 이것을 사용
+
+html안에서 head안에서 <base target="_blank">
+베이스로 전역을 선언
+
+input:enabled{}
+input:disabled{}
+input:focus{}
+input:hover{}
+각 인풋 타입마다 설정 변경
+
+position: relative; 부모 
+position: abslute; 자식
+기존의 절대위치는 정해진 값에 따라서 움직이지만,
+부모와 연결된 절대위치는 부모의 크기값에 따라 정해진다.
+
+#signup input:checked + label{}
+id      type   input:type label
+아이디아래 자식 중 인풋타입의 체크속성이 라벨을 가지고 있을 때
+라벨 안에 있는 속성을 원하는 스타일로 변경
+
+nav:has(a:hover) a:not(:hover){
+    opacity: 0.3;
+}
+nav가 has하는 hover할 때 hover하지 않은 나머지는 스타일을 변경
+opacity는 흐리게 처리한다.
+
+.test::first-letter{
+    font-size: 2em;
+    font-weight: bold;
+}
+첫번째 글자 (frist-line) 첫 줄
+
+.test::before / .test::after
+전에 추가 / 후에 추가
+
+:root{
+    --원하는함수이름: 그것이 가지는 값;
+}
+루트를 사용하면 var()를 통해 지정한 값을 가져옴
+
+width: calc(10% - 80px)
+calc변수를 통해 계산식을 사용할 수 있음(연산자 앞뒤에 공백 필요)
+
+font-size: clamp(1rem, 2vw, 2rem)
+폰트 사이즈가 clamp를 통해 (최소값, 최적값, 최대값)
+으로 표현된다.
+

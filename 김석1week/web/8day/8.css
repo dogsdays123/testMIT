@@ -1,0 +1,113 @@
+body {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+}
+
+p {
+    margin: 1px;
+    line-height: 5vh;
+}
+
+.box .boxbox:first-child p {
+    margin: 1px;
+    line-height: 15vh;
+}
+
+.heads {
+    width: 90vw;
+    height: 5vh;
+    line-height: 5vh;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+    width: 90vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.box {
+    width: 25vw;
+    height: 30vh;
+    margin: 10px;
+    text-align: center;
+}
+
+.box2{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid black;
+    background-color: orange;
+}
+
+.movex{
+    transform: translateX(50px);
+    transition: 2s;
+}
+
+.movey{
+    transform: translateY(50px);
+    transition: 5s;
+}
+
+.movexy{
+    transform: translate(50px, 50px);
+    transition: 3s;
+}
+
+.boxcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxbox {
+    margin: 5px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.boxbox:nth-child(1) {
+    width: 25vw;
+    height: 20vh;
+}
+
+.boxbox:nth-child(2) {
+    width: 25vw;
+    height: 5vh;
+}
+
+.boxbox:nth-child(3) {
+    width: 25vw;
+    height: 5vh;
+}
+
+.boxbox:nth-child(4) {
+    width: 25vw;
+    height: 5vh;
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+
+}
+@media screen and (min-width: 1024px) {
+
+}

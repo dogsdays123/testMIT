@@ -1,18 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="7css.css">
+    <base target="_blank">
 </head>
+
 <body>
     <div class="container">
-        <div class="items">1</div>
-        <div class="items">1</div>
-        <div class="items">1</div>
-        <div class="items">1</div>
-        <div class="items">1</div>
-        <div class="items">1</div>
+        <div class="Lsidebar">
+            <a href="https://naver.com"><img src="정1.jpg" alt=""></a>
+            <p>이 공간은 왼쪽입니다.</p>
+        </div>
+        <div class="Main">
+            <p>이 공간은 가운데입니다.</p>
+            <input type="text">
+        </div>
+        <div class="Rsidebar">
+            <img src="정2.jpg" alt="">
+            <p>이 공간은 오른쪽입니다.</p>
+        </div>
     </div>
+    <div id="si">
+        <fieldset>
+            <legend>객실 형태</legend>
+            <ul>
+                <li>
+                    <input type="radio" name="room">
+                    <label for="1">기본형(최대 2인)</label>
+                <li>
+                <li>
+                    <input type="radio" name="room">
+                    <label for="2">가족형(최대 8인)</label>
+                </li>
+                <li>
+                    <input type="text" name="roomNum">
+                </li>
+            </ul>
+        </fieldset>
+        <button type="submit"> 제출 </button>
+    </div>
+    <div>
+        <nav class="test">
+            <a href="#">home</a>
+            <a href="#">about</a>
+            <a href="#">port</a>
+            <a href="#">contact</a>
+        </nav>
+    </div>
+    <div class="container font">
+        <div class="box">font test</div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        </div>
 </body>
+
 </html>

@@ -1,4 +1,8 @@
-*{
+:root{
+
+}
+
+* {
     box-sizing: border-box;
 }
 
@@ -7,12 +11,162 @@ body {
     height: 100vh;
 }
 
-.container{
-    display: grid;
-    grid-template-columns: 100px 200px 300px;
-    grid-template-rows: 50px 100px;
-    border: 1px solid black;
+li{
+    list-style: none;
 }
-.items{
-    
+
+a{
+    text-decoration: none;
+}
+a:hover, a:focus, a:link{
+    color: black;
+}
+nav:has(a:hover) a:not(:hover){
+    opacity: 0.3;
+}
+.test::first-letter{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 200px) {
+    .container {
+        width: 90vw;
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        border: 1px solid black;
+    }
+
+    .items {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        border: 1px solid black;
+        background-color: yellow;
+        word-break: break-all;
+    }
+
+    .items:nth-child(1) {
+        background-image: url("정1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .items:nth-child(2) {
+        background-image: url("정2.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .items:nth-child(3) {
+        background-image: url("정3.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .items:nth-child(4) {
+        background-image: url("정4.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .items:nth-child(5) {
+        background-image: url("가로1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 400px) {
+    .container {
+        width: 90vw;
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        border: 1px solid black;
+    }
+
+    .items {
+        width: 250px;
+        height: 250px;
+        margin: 5px;
+        border: 1px solid black;
+        background-color: yellow;
+        word-break: break-all;
+    }
+
+    .items:nth-child(1) {
+        background-image: url("정1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .items:nth-child(2) {
+        background-image: url("정2.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .items:nth-child(3) {
+        background-image: url("정3.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .items:nth-child(4) {
+        background-image: url("정4.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .items:nth-child(5) {
+        background-image: url("가로1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        border: 1px solid black;
+    }
+    .Lsidebar img{
+        float: left;
+        border: 1px solid black;
+    }
+    .Rsidebar img{
+        float: right;
+        border: 1px solid black;
+    }
+    .Main img{
+        float:inline-start;
+        border: 1px solid black;
+    }
+    input:hover{background-color: yellowgreen;}
+    #si input:checked + label{
+        color: red;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .box{
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        border: 1px solid black;
+        background-color: yellow;
+        word-break: break-all;
+    }
+    .box:nth-child(n + 5){
+        background-color: blue;
+    }
+    .font{
+        font-size: clamp(1rem, 2vw, 18px);
+    }
+    #signup input:not([type=radio]){
+        border: 10px solid purple;
+        color: blue;
+    }
 }

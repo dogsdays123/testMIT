@@ -1,0 +1,259 @@
+:root {
+    --acolor: rgb(165, 165, 165);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(82, 82, 82);
+}
+
+.main_div{
+
+}
+
+/* -----------------font----------------------- */
+.jaro {
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dongle {
+    font-family: "Dongle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* -----------------font----------------------- */
+
+li {
+    list-style: none;
+}
+
+.a_1 a {
+    text-decoration-line: none;
+    filter: sepia(30%);
+}
+
+.a_1 {}
+
+.ulsize li a,
+.ulsize li a:hover,
+.ulsize li a:link {
+    color: var(--acolor);
+}
+
+.brand_nav_left a:active {
+    color: black;
+}
+
+nav:has(a:hover) a:not(:hover),
+ul:has(a:hover) a:not(:hover) {
+    opacity: 0.3;
+}
+
+.test::first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+    color: white;
+}
+
+.left {
+    text-align: left;
+    color: white;
+}
+
+.font {
+    font-size: clamp(0.7rem, 2.5vw, 2rem);
+    font-weight: bold;
+    color: var(--acolor);
+    text-shadow: 4px 2px 4px black;
+}
+
+.headerfont {
+    font-size: clamp(1rem, 7vw, 4rem);
+}
+
+.floatleft {
+    float: left;
+}
+
+.container {
+    width: 80vw;
+    height: 100vh;
+    margin: 0px auto 10px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-items: center;
+    align-items: stretch;
+}
+
+.middlefont {
+    font-size: clamp(0.7rem, 4vw, 4rem);
+}
+
+.box {
+    margin: 5px;
+    /* border: 1px solid black; */
+    word-break: break-all;
+    color: white;
+}
+
+.box:nth-child(1){
+    transform: rotate(90deg);
+    transition: 3s;
+}
+.box:nth-child(2){
+    transform: rotate(-30deg);
+    transition: 3s;
+}
+.box:nth-child(3){
+    transform: rotate(70deg);
+    transition: 3s;
+}
+.box:nth-child(4){
+    transform: rotate(-45deg);
+    transition: 3s;
+}
+
+@media screen and (max-width: 700px) {
+    .brand_nav_left {
+        display: none;
+    }
+
+    .brand_aside_left {
+        display: none;
+    }
+
+    .brand_nav_right {
+        width: 90vw;
+        margin: 20px auto;
+        display: flex;
+        background-image: linear-gradient(to bottom, rgb(70, 70, 70), rgb(30, 30, 30));
+        border-image: linear-gradient(to bottom, rgb(70, 70, 70), rgb(30, 30, 30));
+        border-image-slice: 1;
+        box-shadow: 0px 10px 10px 0px rgb(50, 50, 50);
+        padding: 5px;
+    }
+
+    .brand_nav_right .nav_right_size a {
+        float: right;
+    }
+
+    .nav_right_size {
+        width: 90vw;
+    }
+
+    .brand_nav_right a,
+    a:hover,
+    a:link {
+        color: var(--acolor);
+    }
+
+    .nav_right_size a:hover {
+        opacity: 0.5;
+    }
+
+    aside {
+        position: fixed;
+        right: 1px;
+        top: 300px;
+        padding: 0px;
+        width: 12vw;
+        height: 70vh;
+        margin: 10px auto 10px;
+        float: right;
+        /* border: 1px solid black; */
+    }
+
+    .nav_right_size a:hover+.brand_aside_right{
+        display: none;
+    }
+    /* 이거 안먹히니까 자바스크립트로 수정 */
+
+    .brand_aside_right {
+        display: block;
+    }
+
+    aside .ulsize {
+        margin: auto 10px auto 0px;
+        padding: 0px;
+    }
+
+    aside .ulsize li {
+        text-align: right;
+        line-height: 50px;
+        word-break: break-all;
+        letter-spacing: 0.2px;
+        font-size: clamp(0.5rem, 2.3vw, 1.5rem);
+        text-shadow: 4px 2px 4px black;
+    }
+}
+
+@media screen and (min-width:700px) {
+    .brand_nav_right {
+        display: none;
+    }
+
+    .brand_aside_right {
+        display: none;
+    }
+
+    .brand_nav_left {
+        width: 90vw;
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        border: 5px solid transparent;
+        background-image: linear-gradient(to bottom, rgb(70, 70, 70), rgb(30, 30, 30));
+        ;
+        border-image: linear-gradient(to bottom, rgb(70, 70, 70), rgb(30, 30, 30));
+        border-image-slice: 1;
+        box-shadow: 0px 10px 10px 0px rgb(50, 50, 50);
+        padding: 10px;
+    }
+
+    .brand_nav_left a,
+    a:hover,
+    a:link {
+        color: var(--acolor);
+    }
+
+    aside {
+        position: fixed;
+        right: 1px;
+        top: 300px;
+        padding: 0px;
+        width: 12vw;
+        height: 70vh;
+        margin: 10px auto 10px;
+        float: right;
+        /* border: 1px solid black; */
+    }
+
+    .brand_aside_left {}
+
+    aside .ulsize {
+        margin: auto 10px auto 0px;
+        padding: 0px;
+    }
+
+    aside .ulsize li {
+        text-align: right;
+        line-height: 50px;
+        word-break: break-all;
+        letter-spacing: 0.2px;
+        font-size: clamp(0.5rem, 2.3vw, 1.5rem);
+        text-shadow: 4px 2px 4px black;
+    }
+}

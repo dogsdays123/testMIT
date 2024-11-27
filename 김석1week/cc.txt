@@ -1,8 +1,0 @@
-1. vscode
-2. vscode for java
-3. github desktop
-  3-1. git download
-4. git
-5. envi
-6. intellij
-7. blender

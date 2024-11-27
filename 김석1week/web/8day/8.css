@@ -64,8 +64,16 @@ p {
 }
 
 .movexy{
-    transform: translate(50px, 50px);
-    transition: 3s;
+    perspective: 200px;
+    transform: skew(20deg, 15deg);
+    transition: 2s;
+}
+
+.testcon{
+    width: 20vw;
+    height: 20vh;
+    border: 1px solid black;
+    background-color: blue;
 }
 
 .boxcontainer {
@@ -81,28 +89,17 @@ p {
     border: 1px solid black;
 }
 
-.boxbox:nth-child(1) {
-    width: 25vw;
-    height: 20vh;
-}
-
-.boxbox:nth-child(2) {
-    width: 25vw;
-    height: 5vh;
-}
-
-.boxbox:nth-child(3) {
-    width: 25vw;
-    height: 5vh;
-}
-
-.boxbox:nth-child(4) {
-    width: 25vw;
-    height: 5vh;
-}
-
 @media screen and (max-width: 768px) {
-
+    .container2 {
+        width: 90vw;
+        height: 40vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        margin-top: 10px;
+    }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {

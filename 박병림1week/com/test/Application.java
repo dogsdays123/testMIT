@@ -1,4 +1,5 @@
 package com.test;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -45,7 +46,10 @@ public class Application {
         // ex_30();
         //ex_31();
         //ex_32();
-        ex_33();
+        //ex_33();
+        //System.out.println(ex_34());
+        ex_35();
+
     }
 
     public static String ex() {
@@ -550,13 +554,43 @@ public class Application {
     public static void ex_33() {
         int size = 6;
         int num = 1;
-        for(int i = 0; i < (size/2) + 1; i++) {
+        for (int i = 0; i < (size / 2) + 1; i++) {
             String str1 = "";
             String str2 = "";
-            for(int j = 0; j < (size/2) + 1 - i; j++) {str1 += " ";}
-            for(int j = 0; j < num; j++) {str2 += "*";}
+            for (int j = 0; j < (size / 2) + 1 - i; j++) {
+                str1 += " ";
+            }
+            for (int j = 0; j < num; j++) {
+                str2 += "*";
+            }
             System.out.println(str1 + str2);
             num += 2;
+        }
+    }
+
+    public static int ex_34() {
+        int total_usage = 0;
+        int storage = 5141;
+        int usage = 500;
+        int[] change = new int[]{10, -10, 10, -10, 10, -10, 10, -10, 10, -10};
+        for (int i = 0; i < change.length; i++) {
+            usage = usage + usage * change[i] / 100;
+            System.out.println(usage);
+            total_usage += usage;
+            System.out.println(total_usage);
+            if (total_usage > storage) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void ex_35() {
+        int lower = 10;
+        int[] a = {2, 3, 4, 5};
+        for (int i = 0; i < a.length; i++) {
+            lower = Math.min(a[i], lower);
+            System.out.println(lower);
         }
     }
 }

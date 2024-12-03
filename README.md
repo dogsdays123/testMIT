@@ -33,4 +33,22 @@
 			<li>파일확인</li>
 	</div>
 			<br>
+				<div>
+		<a id="4days-url" href="https://github.com/dogsdays123/testMIT/blob/main/%EA%B9%80%EC%84%9D1week/web/4day/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%854.html">4일차</a>
+			<li>링크따라가기</li>
+			<li>파일확인</li>
+	</div>
+			<br>
+							<div>
+		<a id="6days-url" href="https://github.com/dogsdays123/testMIT/blob/main/%EA%B9%80%EC%84%9D1week/web/6day/%EA%B8%B0%EC%B4%88%EC%84%A4%EB%AA%856">6일차</a>
+			<li>링크따라가기</li>
+			<li>파일확인</li>
+	</div>
+			<br>
+							<div>
+		<a id="9days-url" href="https://github.com/dogsdays123/testMIT/blob/main/%EA%B9%80%EC%84%9D1week/web/9day/%ED%95%99%EC%8A%B5%EB%82%B4%EC%9A%A9.js">9일차</a>
+			<li>링크따라가기</li>
+			<li>파일확인</li>
+	</div>
+			<br>
 </html>

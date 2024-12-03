@@ -82,3 +82,14 @@ let rang3 = nums.splice(1, 0, "three"); //배열의 1번째부터 0개 삭제하
 let rang = nums.slice(2); //2부터 끝까지 자른다. 이 때, 잘라진 내용물이 새로운 배열로 추가된다.
 let rang2 = nums.slice(2, 4); // 2~4 배열을 잘라낸다. (slice는 기존 배열에 영향을 주지 않는다.)
 //기존 배열의 내용을 꺼내서 새로운 배열을 만드는데 사용된다. 
+
+let now = new Date();
+now.getTime()
+//시간을 가져오는 변수
+//원하는 시간은 Date 함수 안에 추가한다 (2024-01-01)
+
+let oldDate = new Date(hole + 31536000000); //밀리초를 계산해서 date를 가져온다
+console.log(oldDate.getFullYear()); //getFullYear을 사용해서 날짜만 가져온다
+
+hole.substring(0, 4)
+// 0 - 4 의 문자를 가져온다

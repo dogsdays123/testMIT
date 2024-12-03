@@ -7,6 +7,10 @@ body {
     height: 100vh;
 }
 
+.center{
+    text-align: center;
+}
+
 .container {
     width: 90vw;
     height: 40vh;
@@ -49,36 +53,20 @@ body {
     height: 20vh;
 }
 
-/* ------------------------------------------ */
-
-.container2 {
-    width: 90vw;
+.oldTest{
+    width: 40vw;
     height: 40vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.box {
-    width: 20vw;
-    height: 20vh;
     border: 1px solid black;
 }
 
-.orange{
-    width: 20vw;
-    height: 20vh;
-    background-color: orange;
-    transition: 1s;
+.oldTest2{
+    width: 40vw;
+    height: 40vh;
+    border: 1px solid black;
 }
 
-.one:hover {
-    transform: translateX(50px) scaleX(0.5);
-}
-
-.two:hover {
-    transform: translateY(20px) scaleY(1.5);
-}
-
-.three:hover {
-    transform: translate(10px, 20px) scale(1.5, 2);
+.popUp{
+    width: 40vw;
+    height: 40vh;
+    border: 1px solid black;
 }

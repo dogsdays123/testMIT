@@ -41,32 +41,19 @@ testtext3.onclick = function () {
     }
 }
 
-// let testtext4 = document.querySelector(".testtext4");
-// testtext4.onclick = function () {
-//     let memNum = parseInt(prompt("입장객의 숫자를 적어주세요."));
-//     let colNum = parseInt(prompt("한 줄에 몇명씩 앉을지 적어주세요."));
-//     if (memNum <= colNum) {
-//         rowNum = 1;
-//     }
-//     else {
-//         rowNum = parseInt(memNum / colNum) + 1;
-//     }
-//     document.write(`줄은 총 ${rowNum}줄 입니다.`);
-// }
-
-// let doub = document.querySelector(".doub");
-// function boxTrain() {
-//     document.write("<div class=\"container\">");
-//     for (let i = 2; i <= 9; i++) {
-//         document.write(`<div class=\"boxes\">`);
-//         document.write(`<h3>${i}단</h3>`);
-//         for (let j = 1; j <= 9; j++) {
-//             document.write(`${i} * ${j} = ${i * j} <br>`);
-//         }
-//         document.write("</div>");
-//     }
-//     document.write("</div>");
-// }
+let doub = document.querySelector(".doub");
+function boxTrain() {
+    document.write("<div class=\"container\">");
+    for (let i = 2; i <= 9; i++) {
+        document.write(`<div class=\"boxes\">`);
+        document.write(`<h3>${i}단</h3>`);
+        for (let j = 1; j <= 9; j++) {
+            document.write(`${i} * ${j} = ${i * j} <br>`);
+        }
+        document.write("</div>");
+    }
+    document.write("</div>");
+}
 
 const testStar = function () {
     let size = 20;
@@ -93,7 +80,8 @@ const testStar = function () {
     document.write("</div>");
 }
 
-const seatTest = function () {
+let container = document.querySelector(".container");
+container.onclick = function () {
     let memNum = parseInt(prompt("전체 사람 수"));
     let colNum = parseInt(prompt("한 줄에 몇명씩?"));
     let rowNum = 0;
@@ -125,6 +113,7 @@ const seatTest = function () {
     }
 }
 
+
 const arrayTest = function () {
     let nums = [1, 2, 3];
     let chars = ['a', 'b', 'c', 'd']
@@ -137,6 +126,7 @@ const arrayTest = function () {
     console.log(`length: ${rang} / ${nums}`);
 }
 
+let oldTest = document.querySelector(".oldTest");
 const timeTest = function (hole) {
     let now = new Date();
     let birthday = [(hole.substring(0, 4)), (hole.substring(4, 6)), (hole.substring(6, 8))];
@@ -148,6 +138,30 @@ const timeTest = function (hole) {
         old = old / times[i];  // 매번 변환된 값을 result에 저장
     }
     console.log(Math.floor(old));
+    alert(`${Math.floor(old)}살 입니다.`);
 }
 
-timeTest(prompt("생년월일 8자리를 적어주세요.(-, 공백 없이)"));
+let oldTest2 = document.querySelector(".oldTest2");
+const timeTest2 = function (hole) {
+    let times = [1000, 60, 60, 24, 365];
+    for (let i = 0; i < times.length; i++) {
+        hole = hole * times[i];  // 매번 변환된 값을 result에 저장
+    }
+    //+ 31536000000
+    let now = new Date();
+    let oldDate = new Date(hole);
+    alert(`${1970 + now.getFullYear() - oldDate.getFullYear() - 1}년생 입니다.`);
+}
+
+oldTest.onclick = function(){
+    timeTest(prompt("생년월일 8자리를 적어주세요.(-, 공백 없이)"));
+}
+
+oldTest2.onclick = function(){
+    timeTest2(prompt("나이를 적어주세요."));
+}
+
+let popUp = document.querySelector(".popUp");
+popUp.onclick = function () {
+    window.open("study.html", "스터디", "width=500, height=400");
+}

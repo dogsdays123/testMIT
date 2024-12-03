@@ -1,0 +1,44 @@
+li{
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+#signup{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+label{
+    float: left;
+    font-size: 13px;
+    width: 110px;
+}
+
+.center{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+button{
+    width: 60px;
+    height: 40px;
+    border-radius: 40%;
+    margin: 0px;
+}
+
+#signup input:not([type=radio]){
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px;
+    width: 200px;
+}
+
+.center button:hover {
+    background-color: #222;
+    color: #fff;
+}

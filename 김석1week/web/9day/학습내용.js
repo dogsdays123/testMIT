@@ -13,8 +13,8 @@ let reply = confirm("testtext의 내용입니다.");
 
 let name = prompt("이름을 입력하세요", "아무개");
 var name = prompt("이름을 입력하세요");
-// let으로 적힌 것은 기본값을 지정(아무개)
-// var로 적힌 것은 기본값을 지정하지 않음
+// 기본값을 지정(아무개)
+// 기본값을 지정하지 않음
 
 document.write();
 // wirte안에 있는 문자를 출력해줌. 다른 변수와 함께 사용 가능

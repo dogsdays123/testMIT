@@ -67,8 +67,8 @@ let newDiv = document.createElement("div"); //div생성
 newDiv.classList.add("smallbox2"); //생성한 div 클래스리스트에 해당 클래스 추가
 element.appendChild(newDiv); //element의 자식으로 새로운 div(newdiv)를 추가
 
-let rang = nums.push(4, 5); // 배열의 맨 뒤에 추가
-let rang2 = chars.unshift('x'); //배열의 맨 앞에 추가
+let rang = nums.push(4, 5); // 배열의 맨 앞에 추가
+let rang2 = chars.unshift('x'); //배열의 맨 뒤에 추가
 //배열을 추가함 추가한 배열은 각각 nums와 chars에 새로운 배열로 저장됨
 //rang 과 rang2는 배열의 길이를 표현함
 

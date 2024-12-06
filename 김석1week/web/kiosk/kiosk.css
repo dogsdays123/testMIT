@@ -1,0 +1,315 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --card-height: 7vh;
+        --card-width: calc(var(--card-height));
+        --menuContainer-col: repeat(auto-fill, minmax(33%, auto));
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width:500px) {
+    :root {
+        --card-height: 13vh;
+        --card-width: calc(var(--card-height));
+        --menuContainer-col: repeat(auto-fill, minmax(33%, auto));
+    }
+}
+
+@media screen and (max-width: 1300px) and (min-width: 700px) {
+    :root {
+        --card-height: 13vh;
+        --card-width: calc(var(--card-height));
+        --menuContainer-col: repeat(auto-fill, minmax(20%, auto));
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    :root {
+        --card-height: 25vh;
+        --card-width: calc(var(--card-height));
+        --menuContainer-col: repeat(auto-fill, minmax(20%, auto));
+        --menuContainer-row: repeat(auto-fill, minmax(10%, auto));
+    }
+}
+
+/* ---------------------font---------------------- */
+.modak {
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+/* ---------------------font---------------------- */
+
+
+body {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+}
+
+.headText {
+    height: 10vh;
+    line-height: 7vh;
+    font-size: clamp(0.5rem, 5vw, 3.0rem);
+    color: rgba(255, 0, 0, 0.562);
+    text-shadow: 0px 0px 6px rgb(0, 255, 0);
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-items: center;
+}
+
+.menuContainer {
+    display: none;
+    margin: 10px;
+    grid-template-columns: var(--menuContainer-col);
+    grid-template-rows: repeat(5, minmax(50px,auto));
+    grid-auto-flow: dense;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.downbarContainer {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    width: 70vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+.downbarContainer2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, auto));
+    grid-template-columns: repeat(5, auto);
+    justify-content: center;
+    align-items: center;
+}
+
+.subMenus {
+    width: 20vw;
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+}
+
+.subMenu {
+    color: rgba(255, 255, 255, 0.616);
+    text-shadow: 0px 0px 10px rgb(0, 255, 0);
+    font-size: clamp(0.5rem, 5vw, 3.0rem);
+}
+
+.downbar {
+    position: fixed;
+    padding: 0px;
+    width: 70vw;
+    height: 10vh;
+    margin: 10px auto;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.downbarMenu {
+    margin: 5px 5px;
+    background-color: rgb(255, 146, 146);
+}
+
+/* ------------------------card----------------------- */
+
+.card {
+    background: #5757579d;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    margin: 10px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+    font-family: cursive;
+}
+
+.burger .card:hover {
+    color: rgb(255, 230, 0);
+    transition: color 1s;
+}
+
+.drink .card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+}
+
+.set .card:hover {
+    color: rgb(0, 255, 0);
+    transition: color 1s;
+}
+
+.side .card:hover {
+    color: rgb(13, 126, 255);
+    transition: color 1s;
+}
+
+
+.card:hover:before,
+.card:hover:after {
+    animation: none;
+    opacity: 0;
+}
+
+/* ------------------backcolor---------------- */
+.burger .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate), #ffe81a, #ff584c 43%, #ff31cb);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+
+.burger .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(var(--rotate), #ffe81a, #ff584c 43%, #ff31cb);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+}
+
+.drink .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate), #7464ff, #4ceaff 43%, #31ffe4);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.drink .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(var(--rotate), #7464ff, #4ceaff 43%, #31ffe4);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+}
+
+.set .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate), #00ff00, #a6ff00 43%, #00ffd5);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.set .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(var(--rotate), #00ff00, #a6ff00 43%, #00ffd5);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+}
+
+.side .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate), #2f00ff, #b151ff 43%, #75b5ff);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(var(--rotate), #2f00ff, #b151ff 43%, #75b5ff);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+}
+
+/* ------------------backcolor---------------- */
+
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+/* ------------------------card----------------------- */
+

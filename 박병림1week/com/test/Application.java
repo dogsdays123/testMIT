@@ -1,7 +1,13 @@
 package com.test;
 
+import javax.xml.crypto.Data;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Scanner;
+import java.util.*;
+import java.text.*;
 
 // << 비트연산자 c = 2 일때 c <<= 3 을 하면 c * 2^3의 식이 됨.
 // ^= 베타적 or 연산자. 각 식이 같으면 0 다르면 1을 결과.
@@ -48,8 +54,12 @@ public class Application {
         //ex_32();
         //ex_33();
         //System.out.println(ex_34());
-        ex_35();
-
+        //ex_35();
+//        ex_36();
+//        ex_37(args);
+//        ex_38(args);
+//          ex_39();
+        ex_40();
     }
 
     public static String ex() {
@@ -592,5 +602,127 @@ public class Application {
             lower = Math.min(a[i], lower);
             System.out.println(lower);
         }
+    }
+
+    public static void ex_36() {
+//        Calendar c = Calendar.getInstance();
+//        c.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
+//
+//        System.out.println(String.valueOf(c));
+        Calendar c1 = Calendar.getInstance();
+        c1.set(2019, 3, 29);
+        System.out.println(toString(c1));
+        c1.add(Calendar.DATE, 40);
+        System.out.println(toString(c1));
+    }
+
+    private static String toString(Calendar c) {
+        return c.get(Calendar.YEAR) + "sis " + (c.get(Calendar.MONTH) + 1) + "dnjf " + c.get(Calendar.DATE) + "dlf";
+    }
+
+    public static void ex_37(String[] arg) {
+        Calendar c1 = Calendar.getInstance();
+        Calendar c2 = Calendar.getInstance();
+        System.out.println(c1.get(Calendar.DAY_OF_WEEK));
+        int today = 0;
+        int lastday = 0;
+        int year = Integer.parseInt(arg[0]);
+        int month = Integer.parseInt(arg[1]);
+        c1.set(year, month - 1, 1);
+        c2.set(year, month, 1);
+        c2.add(Calendar.DATE, -1);
+        today = c1.get(Calendar.DAY_OF_WEEK);
+        lastday = c2.get(Calendar.DATE);
+        System.out.println("      " + arg[0] + "년 " + arg[1] + "월");
+        System.out.println(" SU MO TU WE TH FR SA");
+        for (int i = 1; i < today; i++) {
+            System.out.print("   ");
+        }
+        int n = today;
+        for (int i = 1; i <= lastday; i++) {
+            System.out.print((i < 10) ? "  " + i : " " + i);
+            if (n % 7 == 0) System.out.println();
+            n++;
+        }
+    }
+
+    public static void ex_38(String[] args) {
+
+        DateFormat df3 = new SimpleDateFormat("yyyy참MM참dd참");
+        DateFormat df4 = new SimpleDateFormat("yyyy--MM--dd");
+        try {
+            Date d = df3.parse(args[0]);
+            System.out.println(df4.format(d));
+        } catch (Exception e) {
+        }
+    }
+
+    public static void ex_39() {
+        Date d = null;
+        String pattern = "yyMMdd";
+        DateFormat df = new SimpleDateFormat(pattern);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("생년월일을 " + pattern + " 형식으로 작성하세요.");
+        while (sc.hasNext()) {
+            try {
+                d = df.parse(sc.nextLine());
+                break;
+            } catch (Exception e) {
+                System.out.println("생년월일을 " + pattern + "형식으로 다시 작성하세요.");
+            }
+        }
+        Calendar c1 = Calendar.getInstance();
+        c1.setTime(d);
+        Calendar today = Calendar.getInstance();
+        long day = ((today.getTimeInMillis() - c1.getTimeInMillis()) / (24 * 60 * 60 * 1000)) / (365);
+        System.out.println(day + "만큼 살았네");
+
+    }
+
+    public static void ex_40() {
+        Calendar time = Calendar.getInstance();
+        Date d = new Date();
+        String pattern = "yy";
+        Scanner sc = new Scanner(System.in);
+        DateFormat df = new SimpleDateFormat(pattern);
+        System.out.println("년도를 " + pattern + " 형식으로 작성하세요.");
+        //년도만 작성하면 문제없는데, 월/일 까지 작성하면 똑같은 패턴만 반복됨 문제있음
+        while (sc.hasNext()) {
+            try {
+                d = df.parse(sc.nextLine());
+                System.out.println(d);
+                break;
+            } catch (Exception e) {
+                System.out.println("년도를 " + pattern + "형식으로 다시 작성하세요.");
+            }
+        }
+        time.setTime(d);
+
+        for (int i = 0; i < 12; i++) {
+            // 1일의 요일을 구한다.
+            // EX) 7 = 토요일, 1 = 일요일
+            int weekDay = time.get(Calendar.DAY_OF_WEEK);
+
+            // 둘째주 일요을 찾는다.
+            if (weekDay == 1) {
+                time.set(Calendar.DAY_OF_MONTH, 8);
+            } else {
+                time.set(Calendar.DAY_OF_MONTH, 16 - weekDay);
+            }
+
+            // Data로 형식을 바꿔준다.
+            Date date = time.getTime();
+
+            // 출력
+            System.out.println(new SimpleDateFormat("yyyy-MM-dd는 F번째 E요일 입니다.").format(date));
+
+            // 월을 더해주고, 일을 1일로 초기화 한다.
+            time.add(Calendar.MONTH, 1);
+            time.set(Calendar.DAY_OF_MONTH, 1);
+        }
+    }
+
+    public static void ex_41() {
+        
     }
 }

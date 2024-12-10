@@ -35,7 +35,7 @@
         --card-height: 13vh;
         --card-width: calc(var(--card-height));
         --menuContainer-col: repeat(auto-fill, minmax(20%, auto));
-        --padding-sub: 16px 36px;
+        --padding-sub: 16px 30px;
         --arrow-size: 24px;
     }
 }
@@ -44,9 +44,9 @@
     :root {
         --card-height: 25vh;
         --card-width: calc(var(--card-height));
-        --menuContainer-col: repeat(auto-fill, minmax(20%, auto));
+        --menuContainer-col: repeat(auto-fill, minmax(10%, auto));
         --menuContainer-row: repeat(auto-fill, minmax(10%, auto));
-        --padding-sub: 20px 40px;
+        --padding-sub: 20px 50px;
         --arrow-size: 26px;
     }
 }
@@ -89,12 +89,13 @@ body {
 
 .menuContainer {
     display: none;
-    margin-top: 20px;
+    margin-top: 100px;
     grid-template-columns: var(--menuContainer-col);
     grid-auto-flow: dense;
     justify-content: center;
     justify-items: center;
     align-items: center;
+    gap: 50px;
 }
 
 .downbarContainer {
@@ -105,6 +106,7 @@ body {
     height: 10vh;
     display: flex;
     justify-content: center;
+    z-index: 5;
 }
 
 .downbarContainer2 {
@@ -125,7 +127,6 @@ body {
     grid-template-rows: repeat(auto-fill, minmax(10%, auto));
     justify-content: center;
     align-items: center;
-    z-index: 5;
 }
 
 .subMenus {
@@ -166,45 +167,6 @@ body {
   box-sizing: border-box;
 }
 
-.checkbox-wrapper-16 .checkbox-input {
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile {
-  border-color: #2260ff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  color: #2260ff;
-}
-
-.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile:before {
-  transform: scale(1);
-  opacity: 1;
-  background-color: #2260ff;
-  border-color: #2260ff;
-}
-
-.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-icon,
-  .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-label {
-  color: #2260ff;
-}
-
-.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile {
-  border-color: #2260ff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
-}
-
-.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile:before {
-  transform: scale(1);
-  opacity: 1;
-}
-
 .checkbox-wrapper-16 .checkbox-tile {
   display: flex;
   flex-direction: column;
@@ -219,26 +181,6 @@ body {
   transition: 0.15s ease;
   cursor: pointer;
   position: relative;
-}
-
-.checkbox-wrapper-16 .checkbox-tile:before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 2px solid #b5bfd9;
-  background-color: #fff;
-  border-radius: 50%;
-  top: 0.25rem;
-  left: 0.25rem;
-  opacity: 0;
-  transform: scale(0);
-  transition: 0.25s ease;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
-  background-size: 12px;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 .checkbox-wrapper-16 .checkbox-tile:hover {
@@ -260,10 +202,11 @@ body {
   height: 3rem;
 }
 
-.checkbox-wrapper-16 .checkbox-label {
-  color: #707070;
+:is(.checkbox-wrapper-16 .checkbox-label, .checkbox-wrapper-16 .eachPrice) {
+  color: #000000;
   transition: 0.375s ease;
   text-align: center;
+  line-height: 5rem;
 }
 
 /* ------------------------card----------------------- */
@@ -361,19 +304,27 @@ body {
   .burger .animated-button {
     text-shadow: white;
     color: var(--color-burger);
-    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.7);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.7),
+    0px 0px 20px rgb(255, 0, 0),
+    0px 0px 30px rgb(255, 0, 0);
   }
   .drink .animated-button {
     color: var(--color-drink);
-    box-shadow: 0 0 0 2px rgb(0, 162, 255, 0.7);
+    box-shadow: 0 0 0 2px rgb(0, 162, 255, 0.7),
+    0px 0px 20px rgb(0, 162, 255),
+    0px 0px 30px rgb(0, 162, 255);
   }
   .set .animated-button {
     color: var(--color-set);
-    box-shadow: 0 0 0 2px rgb(9, 255, 0, 0.7);
+    box-shadow: 0 0 0 2px rgb(9, 255, 0, 0.7),
+    0px 0px 20px rgb(9, 255, 0),
+    0px 0px 30px rgb(9, 255, 0);
   }
   .side .animated-button {
     color: var(--color-side);
-    box-shadow: 0 0 0 2px rgb(251, 255, 0, 0.7);
+    box-shadow: 0 0 0 2px rgb(251, 255, 0, 0.7),
+    0px 0px 20px rgb(251, 255, 0),
+    0px 0px 30px rgb(251, 255, 0);
   }
 /* ---------animated--------- */
 

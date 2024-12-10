@@ -40,3 +40,12 @@ burgerCard[i].querySelector(".eachPrice").textContent
 
 eval(`${str}Full[${j}] = menuFull[${i}];`);
 //eval을 사용하면 그 자체로 문자형 게산식으로 바꿔줌
+
+!Array.from(dontDist).some(item => item === e.target)
+//1. Array.from(dontDist)는 **NodeList**를 배열로 변환하는 메서드
+//이렇게 하면 배열 메서드인 some(), forEach(), map() 등을 사용할 수 있게 됨
+//2. some()은 배열의 각 요소에 대해 제공된 조건을 체크
+//조건을 만족하는 요소가 있으면 true를 반환하고, 없으면 false를 반환
+//3. 이 코드에서 item => item === e.target는 화살표 함수
+//item이 e.target과 같은지 확인하는 조건
+//e.target은 클릭된 요소이고, item은 dontDist 배열의 각 요소

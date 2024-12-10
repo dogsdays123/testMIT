@@ -8,7 +8,7 @@ let side = document.querySelector(".side");
 let priced = document.querySelector(".price");
 let choiseMenu = document.querySelector('.choiseMenu');
 let downbarContainer = document.querySelector('.downbarContainer');
-let downbarMenu = document.querySelector('.downbarContainer .disable');
+let downbarMenu = document.querySelector('.downbarMenuContainer');
 // let menuContainers = document.querySelectorAll(".menuContainer");
 let cardOrigin = document.querySelector('.highMenu');
 
@@ -235,7 +235,7 @@ function count() {
         setCall[i] = {
             name: setCard[i].name,
             price: parseInt(setCard[i].price),
-            index:setCard[i].index
+            index: setCard[i].index
         };
     }
     for (let i = 0; i < sideCard.length; i++) {
@@ -253,12 +253,12 @@ function count() {
             //더하기 버튼을 만든다.
             const addButton = document.createElement('button');
             addButton.textContent = 'Add';
-            addButton.classList.add('addButton');
+            addButton.classList.add('addButton', 'dontDist');
 
             //빼기 버튼을 만든다.
             const removeButton = document.createElement('button');
             removeButton.textContent = 'Remove';
-            removeButton.classList.add('removeButton');
+            removeButton.classList.add('removeButton', 'dontDist');
 
             //li요소 자식위치에 버튼들을 추가한다.
             liElement.appendChild(addButton);
@@ -292,13 +292,14 @@ function count() {
         }
 
         for (let i = 0; i < burgerCall.length; i++) {
-            burgerFull[i].onclick = function () {
+            burgerFull[i].querySelector('.animated-button').onclick = function () {
                 burgerCall[i].index++;
                 priced.textContent = `${allPrice += burgerCall[i].price}`;
                 if ((burgerCall[i].index == 1)) {
                     priceText[i] = document.querySelector('.downbarMenuContainer ul').appendChild(document.createElement('li'));
+                    priceText[i].classList.add('dontDist');
                     priceText[i].textContent = `${burgerCall[i].name} ${burgerCall[i].index}개`
-                    createButtons(priceText[i], i, burgerCall, 'burger');
+                    createButtons(priceText[i], i, burgerCall);
                 }
                 else {
                     priceText[i].firstChild.textContent = `${burgerCall[i].name} ${burgerCall[i].index}개`
@@ -311,8 +312,9 @@ function count() {
                 priced.textContent = `${allPrice += drinkCall[i].price}`;
                 if ((drinkCall[i].index == 1)) {
                     priceText[i] = document.querySelector('.downbarMenuContainer ul').appendChild(document.createElement('li'));
+                    priceText[i].classList.add('dontDist');
                     priceText[i].textContent = `${drinkCall[i].name} ${drinkCall[i].index}개`
-                    createButtons(priceText[i], i, drinkCall, 'drink');
+                    createButtons(priceText[i], i, drinkCall);
                 }
                 else {
                     priceText[i].firstChild.textContent = `${drinkCall[i].name} ${drinkCall[i].index}개`
@@ -325,8 +327,9 @@ function count() {
                 priced.textContent = `${allPrice += setCall[i].price}`;
                 if ((setCall[i].index == 1)) {
                     priceText[i] = document.querySelector('.downbarMenuContainer ul').appendChild(document.createElement('li'));
+                    priceText[i].classList.add('dontDist');
                     priceText[i].textContent = `${setCall[i].name} ${setCall[i].index}개`
-                    createButtons(priceText[i], i, setCall, 'set');
+                    createButtons(priceText[i], i, setCall);
                 }
                 else {
                     priceText[i].firstChild.textContent = `${setCall[i].name} ${setCall[i].index}개`
@@ -339,8 +342,9 @@ function count() {
                 priced.textContent = `${allPrice += sideCall[i].price}`;
                 if ((sideCall[i].index == 1)) {
                     priceText[i] = document.querySelector('.downbarMenuContainer ul').appendChild(document.createElement('li'));
+                    priceText[i].classList.add('dontDist');
                     priceText[i].textContent = `${sideCall[i].name} ${sideCall[i].index}개`
-                    createButtons(priceText[i], i, sideCall, 'side');
+                    createButtons(priceText[i], i, sideCall);
                 }
                 else {
                     priceText[i].firstChild.textContent = `${sideCall[i].name} ${sideCall[i].index}개`
@@ -350,14 +354,18 @@ function count() {
     })
 
     document.addEventListener("DOMContentLoaded", function () {
-        choiseMenu.addEventListener("click", function () {
-            if (downbarMenu.classList.contains('disable')) {
-                downbarMenu.classList.remove('disable');
-                downbarMenu.classList.add('enable');
-            }
-            else {
+        addEventListener("click", function (e) {
+            console.log(priceText);
+            let dontDist = this.document.querySelectorAll('.dontDist');
+            //off
+            if ((e.target != downbarMenu) && (downbarMenu.classList.contains('enable')) && !Array.from(dontDist).some(item => item === e.target)) {
                 downbarMenu.classList.remove('enable');
                 downbarMenu.classList.add('disable');
+            }
+            //on
+            else if ((e.target == choiseMenu) && (downbarMenu.classList.contains('disable'))) {
+                downbarMenu.classList.remove('disable');
+                downbarMenu.classList.add('enable');
             }
         })
     })

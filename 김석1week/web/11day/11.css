@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    width: 50vw;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-items: center;
+    border: 1px solid white;
+}
+
+.box{
+    width: 10vw;
+    height: 10vh;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0%;
+}
+
+.disable{
+    color: #ccc;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.enable{
+    color: #fff;
+    background-color: #117bff;
+    border: 1px solid #007bff;
+}

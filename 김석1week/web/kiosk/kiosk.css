@@ -3,12 +3,20 @@
     initial-value: 132deg;
     inherits: false;
 }
+:root{
+    --color-burger : rgb(255, 54, 54);
+    --color-drink : rgb(0, 183, 255);
+    --color-set : rgb(9, 255, 0);
+    --color-side : rgb(251, 255, 0);
+}
 
 @media screen and (max-width: 500px) {
     :root {
         --card-height: 7vh;
         --card-width: calc(var(--card-height));
         --menuContainer-col: repeat(auto-fill, minmax(33%, auto));
+        --padding-sub: 10px 30px;
+        --arrow-size: 16px;
     }
 }
 
@@ -17,6 +25,8 @@
         --card-height: 13vh;
         --card-width: calc(var(--card-height));
         --menuContainer-col: repeat(auto-fill, minmax(33%, auto));
+        --padding-sub: 10px 30px;
+        --arrow-size: 20px;
     }
 }
 
@@ -25,6 +35,8 @@
         --card-height: 13vh;
         --card-width: calc(var(--card-height));
         --menuContainer-col: repeat(auto-fill, minmax(20%, auto));
+        --padding-sub: 16px 36px;
+        --arrow-size: 24px;
     }
 }
 
@@ -34,6 +46,8 @@
         --card-width: calc(var(--card-height));
         --menuContainer-col: repeat(auto-fill, minmax(20%, auto));
         --menuContainer-row: repeat(auto-fill, minmax(10%, auto));
+        --padding-sub: 20px 40px;
+        --arrow-size: 26px;
     }
 }
 
@@ -42,7 +56,8 @@
     font-family: "Modak", system-ui;
     font-weight: 400;
     font-style: normal;
-  }
+}
+
 /* ---------------------font---------------------- */
 
 
@@ -50,6 +65,7 @@ body {
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
+    margin: 0px;
     background-color: rgb(0, 0, 0);
     position: relative;
 }
@@ -58,9 +74,11 @@ body {
     height: 10vh;
     line-height: 7vh;
     font-size: clamp(0.5rem, 5vw, 3.0rem);
-    color: rgba(255, 0, 0, 0.562);
-    text-shadow: 0px 0px 6px rgb(0, 255, 0);
+    color: rgba(0, 0, 0, 0.5);
     text-align: center;
+    font-weight: 100;
+    opacity: 1;
+    animation: bright 7s linear infinite;
 }
 
 .container {
@@ -71,9 +89,8 @@ body {
 
 .menuContainer {
     display: none;
-    margin: 10px;
+    margin-top: 20px;
     grid-template-columns: var(--menuContainer-col);
-    grid-template-rows: repeat(5, minmax(50px,auto));
     grid-auto-flow: dense;
     justify-content: center;
     justify-items: center;
@@ -98,6 +115,19 @@ body {
     align-items: center;
 }
 
+.downbarMenuContainer {
+    position: absolute;
+    top: -600%;
+    width: 70vw;
+    height: 50vh;
+    border: 1px solid white;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(10%, auto));
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
 .subMenus {
     width: 20vw;
     height: 5vh;
@@ -107,7 +137,6 @@ body {
 
 .subMenu {
     color: rgba(255, 255, 255, 0.616);
-    text-shadow: 0px 0px 10px rgb(0, 255, 0);
     font-size: clamp(0.5rem, 5vw, 3.0rem);
 }
 
@@ -120,186 +149,125 @@ body {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-.downbarMenu {
-    margin: 5px 5px;
-    background-color: rgb(255, 146, 146);
+.disable {
+    display: none;
+}
+
+.enable {
+    display: block;
+    background-color: white;
 }
 
 /* ------------------------card----------------------- */
 
-.card {
-    background: #5757579d;
-    width: var(--card-width);
-    height: var(--card-height);
-    padding: 3px;
-    margin: 10px;
-    position: relative;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 1.5em;
-    color: rgb(88 199 250 / 0%);
-    cursor: pointer;
-    font-family: cursive;
+.checkbox-wrapper-16 *,
+  .checkbox-wrapper-16 *:after,
+  .checkbox-wrapper-16 *:before {
+  box-sizing: border-box;
 }
 
-.burger .card:hover {
-    color: rgb(255, 230, 0);
-    transition: color 1s;
+.checkbox-wrapper-16 .checkbox-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-.drink .card:hover {
-    color: rgb(88 199 250 / 100%);
-    transition: color 1s;
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #2260ff;
 }
 
-.set .card:hover {
-    color: rgb(0, 255, 0);
-    transition: color 1s;
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #2260ff;
+  border-color: #2260ff;
 }
 
-.side .card:hover {
-    color: rgb(13, 126, 255);
-    transition: color 1s;
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-icon,
+  .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-label {
+  color: #2260ff;
 }
 
-
-.card:hover:before,
-.card:hover:after {
-    animation: none;
-    opacity: 0;
+.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
 }
 
-/* ------------------backcolor---------------- */
-.burger .card::before {
-    content: "";
-    width: 104%;
-    height: 102%;
-    border-radius: 8px;
-    background-image: linear-gradient(var(--rotate), #ffe81a, #ff584c 43%, #ff31cb);
-    position: absolute;
-    z-index: -1;
-    top: -1%;
-    left: -2%;
-    animation: spin 2.5s linear infinite;
+.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
 }
 
-
-.burger .card::after {
-    position: absolute;
-    content: "";
-    top: calc(var(--card-height) / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    transform: scale(0.8);
-    filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(var(--rotate), #ffe81a, #ff584c 43%, #ff31cb);
-    opacity: 1;
-    transition: opacity .5s;
-    animation: spin 2.5s linear infinite;
+.checkbox-wrapper-16 .checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  min-height: 7rem;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
 }
 
-.drink .card::before {
-    content: "";
-    width: 104%;
-    height: 102%;
-    border-radius: 8px;
-    background-image: linear-gradient(var(--rotate), #7464ff, #4ceaff 43%, #31ffe4);
-    position: absolute;
-    z-index: -1;
-    top: -1%;
-    left: -2%;
-    animation: spin 2.5s linear infinite;
+.checkbox-wrapper-16 .checkbox-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
-.drink .card::after {
-    position: absolute;
-    content: "";
-    top: calc(var(--card-height) / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    transform: scale(0.8);
-    filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(var(--rotate), #7464ff, #4ceaff 43%, #31ffe4);
-    opacity: 1;
-    transition: opacity .5s;
-    animation: spin 2.5s linear infinite;
+.checkbox-wrapper-16 .checkbox-tile:hover {
+  border-color: #2260ff;
 }
 
-.set .card::before {
-    content: "";
-    width: 104%;
-    height: 102%;
-    border-radius: 8px;
-    background-image: linear-gradient(var(--rotate), #00ff00, #a6ff00 43%, #00ffd5);
-    position: absolute;
-    z-index: -1;
-    top: -1%;
-    left: -2%;
-    animation: spin 2.5s linear infinite;
+.checkbox-wrapper-16 .checkbox-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
 }
 
-.set .card::after {
-    position: absolute;
-    content: "";
-    top: calc(var(--card-height) / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    transform: scale(0.8);
-    filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(var(--rotate), #00ff00, #a6ff00 43%, #00ffd5);
-    opacity: 1;
-    transition: opacity .5s;
-    animation: spin 2.5s linear infinite;
+.checkbox-wrapper-16 .checkbox-icon {
+  transition: 0.375s ease;
+  color: #494949;
 }
 
-.side .card::before {
-    content: "";
-    width: 104%;
-    height: 102%;
-    border-radius: 8px;
-    background-image: linear-gradient(var(--rotate), #2f00ff, #b151ff 43%, #75b5ff);
-    position: absolute;
-    z-index: -1;
-    top: -1%;
-    left: -2%;
-    animation: spin 2.5s linear infinite;
+.checkbox-wrapper-16 .checkbox-icon svg {
+  width: 3rem;
+  height: 3rem;
 }
 
-.card::after {
-    position: absolute;
-    content: "";
-    top: calc(var(--card-height) / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    transform: scale(0.8);
-    filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(var(--rotate), #2f00ff, #b151ff 43%, #75b5ff);
-    opacity: 1;
-    transition: opacity .5s;
-    animation: spin 2.5s linear infinite;
+.checkbox-wrapper-16 .checkbox-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
 }
 
-/* ------------------backcolor---------------- */
-
+/* ------------------------card----------------------- */
+/* ------------------------animated----------------------- */
 
 @keyframes spin {
     0% {
@@ -311,5 +279,206 @@ body {
     }
 }
 
-/* ------------------------card----------------------- */
+@keyframes bright {
+    0% {
+        text-shadow: 0px 0px 10px rgb(0, 255, 0),
+            0px 0px 20px rgb(0, 255, 0),
+            0px 0px 30px rgb(0, 255, 0);
+    }
 
+    19% {
+        text-shadow: 0px 0px 10px rgb(0, 255, 0),
+            0px 0px 20px rgb(0, 255, 0),
+            0px 0px 30px rgb(0, 255, 0);
+    }
+
+    20% {
+        text-shadow: 0px 0px 10px rgba(0, 255, 0, 0)
+    }
+
+    21% {
+        text-shadow: 0px 0px 10px rgb(0, 255, 0),
+            0px 0px 20px rgb(0, 255, 0),
+            0px 0px 30px rgb(0, 255, 0);
+    }
+
+    50% {
+        text-shadow: 0px 0px 10px rgb(0, 255, 0),
+            0px 0px 20px rgb(0, 255, 0),
+            0px 0px 30px rgb(0, 255, 0);
+    }
+
+    51% {
+        text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5),
+            0px 0px 20px rgba(0, 255, 0, 0.5),
+            0px 0px 30px rgba(0, 255, 0, 0.5);
+    }
+
+    52% {
+        text-shadow: 0px 0px 10px rgb(0, 255, 0),
+            0px 0px 20px rgb(0, 255, 0),
+            0px 0px 30px rgb(0, 255, 0);
+    }
+
+    54% {
+        text-shadow: 0px 0px 10px rgba(0, 255, 0, 0);
+    }
+
+    55% {
+        text-shadow: 0px 0px 10px rgb(0, 255, 0),
+            0px 0px 20px rgb(0, 255, 0),
+            0px 0px 30px rgb(0, 255, 0);
+    }
+
+    100% {
+        text-shadow: 0px 0px 10px rgb(0, 255, 0),
+            0px 0px 20px rgb(0, 255, 0),
+            0px 0px 30px rgb(0, 255, 0);
+    }
+}
+
+/* ------------------------animated----------------------- */
+
+/* -----------------------button ui----------------------- */
+/* ---------animated--------- */
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: var(--padding-sub);
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .burger .animated-button {
+    text-shadow: white;
+    color: var(--color-burger);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.7);
+  }
+  .drink .animated-button {
+    color: var(--color-drink);
+    box-shadow: 0 0 0 2px rgb(0, 162, 255, 0.7);
+  }
+  .set .animated-button {
+    color: var(--color-set);
+    box-shadow: 0 0 0 2px rgb(9, 255, 0, 0.7);
+  }
+  .side .animated-button {
+    color: var(--color-side);
+    box-shadow: 0 0 0 2px rgb(251, 255, 0, 0.7);
+  }
+/* ---------animated--------- */
+
+/* ---------svg--------- */
+  .burger .animated-button svg {
+    position: absolute;
+    width: var(--arrow-size);
+    fill: var(--color-burger);
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .drink .animated-button svg {
+    position: absolute;
+    width: var(--arrow-size);
+    fill: var(--color-drink);
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .set .animated-button svg {
+    position: absolute;
+    width: var(--arrow-size);
+    fill: var(--color-set);
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .side .animated-button svg {
+    position: absolute;
+    width: var(--arrow-size);
+    fill: var(--color-side);
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+/* ---------svg--------- */
+  
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+  
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+  
+  /* ---------circle--------- */
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .burger .animated-button .circle{
+    background-color: var(--color-burger);
+  }
+  .drink .animated-button .circle{
+    background-color: var(--color-drink);
+  }
+  .set .animated-button .circle{
+    background-color: var(--color-set);
+  }
+  .side .animated-button .circle{
+    background-color: var(--color-side);
+  }
+  /* ---------circle--------- */
+
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+  
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .animated-button:hover svg {
+    fill: #212121;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+  }
+  
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }

@@ -19,3 +19,24 @@ test3.onclick = function(){
     test3.textContent = `${screen.availWidth}, ${screen.availHeight}, ${screen.width}, ${screen.height}`;
 }
 //화면의 너비를 알 수 있다. (screen.변수) 를 설정하면 된다.
+
+let box = document.querySelector(".box");
+box.addEventListener("click", change);
+box.textContent = "체인지";
+box.style.backgroundColor = "green";
+//원하는 클래스 혹은 아이디에 스타일 적용
+//addEventListener을 통해 반복이벤트 가능
+
+let newItem = document.createElement("li");
+//원하는 요소를 만들어 냄 (위치는 나중에 지정해줘야 함)
+
+let subject = document.querySelector("#subject");
+let newText = document.createTextNode(subject.value);
+
+burgerCard[i].childNodes[0].textContent.trim()
+//버거카드의 첫번째 자식의 텍스트 가져오기
+burgerCard[i].querySelector(".eachPrice").textContent
+//버거카드의 .eachPrice 클래스가 가지고있는 텍스트 가져오기
+
+eval(`${str}Full[${j}] = menuFull[${i}];`);
+//eval을 사용하면 그 자체로 문자형 게산식으로 바꿔줌

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <h1>MIT STUDY</h1>
-<p>엠아이티능력개발원https://forms.gle/TSFR7JWi4trJvVKdA</p>
+<p>엠아이티능력개발원</p>
 <h1>승원의 공부 진행사항</h1>
 <p>1주차 ~ 25주차</p>
 </html>

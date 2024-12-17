@@ -7,7 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="kiosk.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Modak&family=Nanum+Pen+Script&family=Nerko+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Modak&family=Nanum+Pen+Script&family=Nerko+One&display=swap');
   </style>
 </head>
 
@@ -89,10 +89,10 @@
           <div class="burger">
             <div class="checkbox-wrapper-16 card">
               <label class="checkbox-wrapper">
-                <span class="checkbox-tile">
-                  <span class="checkbox-label">fat burger</span>
-                  <span class="eachPrice">150</span>
-                </span>
+                <div class="checkbox-tile hansam">
+                  <p class="checkbox-label"></p>
+                  <p class="eachPrice"></p>
+                </div>
               </label>
             </div>
           </div>
@@ -100,20 +100,31 @@
       </div>
     </div>
   </header>
-  <div class="downbarContainer">
-    <div class="downbar downbarContainer2">
-      <button class="menuClose" style="display: none;">메뉴닫기</button>
-      <div class="choiseMenu">선택메뉴</div>
-      <div class="price">0<div>
-
+  <div class="downbarContainer hansam">
+    <div class="card2">
+      <div class="card2-inner">
+        <div class="card2-front">
+          <p class="choiseMenu" style="text-align: center;">환영합니다 ! <br> 주문할 메뉴를 선택해 주세요 !</p>
+        </div>
+        <div class="card2-back">
+          <p>주 문 하 기</p>
         </div>
       </div>
-      <div class="money">원</div>
+    </div>
+    <div class="card4 card4Dis">
+      <div class="take"></div>
+      <div class="price"></div>
+      <div class="order"><button class="orderButton hansam">주문하기</button>
+      </div>
     </div>
     <div class="disable downbarMenuContainer">
-      <ul>
+      <div class="card3">
+        <div class="buyMenu">
 
-      </ul>
+        </div>
+        <div class="bg"></div>
+        <div class="blob"></div>
+      </div>
     </div>
   </div>
   <script defer src="kiosk.js"></script>

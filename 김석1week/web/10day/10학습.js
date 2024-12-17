@@ -49,3 +49,10 @@ eval(`${str}Full[${j}] = menuFull[${i}];`);
 //3. 이 코드에서 item => item === e.target는 화살표 함수
 //item이 e.target과 같은지 확인하는 조건
 //e.target은 클릭된 요소이고, item은 dontDist 배열의 각 요소
+
+let downbarAll = downbarMenu.querySelectorAll('*');
+//자식들 모두 가져오기
+
+imgFool.style.backgroundImage = `url(imgs/${encodeURIComponent(arr[j].name)}.png)`;
+//URL 인코딩에서 특수문자가 포함되어 있으면 인식하지 못함
+//따라서 encodeURIComponent() 함수를 이용하여 인코딩 해야함

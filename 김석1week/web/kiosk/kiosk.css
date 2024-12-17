@@ -1,182 +1,285 @@
 @property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
 }
-:root{
-    --color-burger : rgb(255, 54, 54);
-    --color-drink : rgb(0, 183, 255);
-    --color-set : rgb(9, 255, 0);
-    --color-side : rgb(251, 255, 0);
+
+:root {
+  --color-burger: rgb(255, 54, 54);
+  --color-drink: rgb(0, 183, 255);
+  --color-set: rgb(55, 0, 255);
+  --color-side: rgb(236, 33, 255);
+  --color-bright-animated: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 500px) {
-    :root {
-        --card-height: 7vh;
-        --card-width: calc(var(--card-height));
-        --menuContainer-col: repeat(auto-fill, minmax(33%, auto));
-        --padding-sub: 10px 30px;
-        --arrow-size: 16px;
-    }
+  :root {
+    --card-height: 7vh;
+    --card-width: calc(var(--card-height));
+    --menuContainer-col: repeat(auto-fill, minmax(33%, auto));
+    --menuContainer-row: repeat(auto-fill, minmax(33%, auto));
+    --padding-sub: 10px 30px;
+    --arrow-size: 16px;
+    --buy-width: 100px;
+    --buy-height: 200px;
+    --margin-bottom: 30px;
+    --button-padding: 7px 6px 3px;
+  }
 }
 
-@media screen and (max-width: 700px) and (min-width:500px) {
-    :root {
-        --card-height: 13vh;
-        --card-width: calc(var(--card-height));
-        --menuContainer-col: repeat(auto-fill, minmax(33%, auto));
-        --padding-sub: 10px 30px;
-        --arrow-size: 20px;
-    }
+@media screen and (max-width: 800px) and (min-width:500px) {
+  :root {
+    --card-height: 13vh;
+    --card-width: calc(var(--card-height));
+    --menuContainer-col: repeat(auto-fill, minmax(33%, auto));
+    --menuContainer-row: repeat(auto-fill, minmax(33%, auto));
+    --padding-sub: 10px 30px;
+    --arrow-size: 20px;
+    --buy-width: 100px;
+    --buy-height: 200px;
+    --margin-bottom: 30px;
+    --button-padding: 10px 10px 5px;
+  }
 }
 
-@media screen and (max-width: 1300px) and (min-width: 700px) {
-    :root {
-        --card-height: 13vh;
-        --card-width: calc(var(--card-height));
-        --menuContainer-col: repeat(auto-fill, minmax(20%, auto));
-        --padding-sub: 16px 30px;
-        --arrow-size: 24px;
-    }
+@media screen and (max-width: 1300px) and (min-width: 800px) {
+  :root {
+    --card-height: 13vh;
+    --card-width: calc(var(--card-height));
+    --menuContainer-col: repeat(auto-fill, minmax(25%, auto));
+    --menuContainer-row: repeat(auto-fill, minmax(25%, auto));
+    --padding-sub: 16px 30px;
+    --arrow-size: 24px;
+    --buy-width: 120px;
+    --buy-height: 240px;
+    --margin-bottom: 50px;
+    --button-padding: 15px 20px 7.5px;
+  }
 }
 
 @media screen and (min-width: 1300px) {
-    :root {
-        --card-height: 25vh;
-        --card-width: calc(var(--card-height));
-        --menuContainer-col: repeat(auto-fill, minmax(10%, auto));
-        --menuContainer-row: repeat(auto-fill, minmax(10%, auto));
-        --padding-sub: 20px 50px;
-        --arrow-size: 26px;
-    }
+  :root {
+    --card-height: 25vh;
+    --card-width: calc(var(--card-height));
+    --menuContainer-col: repeat(auto-fill, minmax(20%, auto));
+    --menuContainer-row: repeat(auto-fill, minmax(20%, auto));
+    --padding-sub: 20px 50px;
+    --arrow-size: 26px;
+    --buy-width: 150px;
+    --buy-height: 300px;
+    --margin-bottom: 80px;
+    --button-padding: 16px 30px 10px;
+  }
 }
 
 /* ---------------------font---------------------- */
 .modak {
-    font-family: "Modak", system-ui;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hansam {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 1;
+  font-style: normal;
 }
 
 /* ---------------------font---------------------- */
 
 
 body {
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
-    margin: 0px;
-    background-color: rgb(0, 0, 0);
-    position: relative;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  background-color: rgb(255, 231, 93);
+  /* background-image: url(imgs/burgerBack.jpg); */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.addButton{
+  width: 40px;
+  height: 30px;
+  color: blue;
+}
+
+.removeButton{
+  width: 70px;
+  height: 30px;
+  color: blue;
 }
 
 .headText {
-    height: 10vh;
-    line-height: 7vh;
-    font-size: clamp(0.5rem, 5vw, 3.0rem);
-    color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    font-weight: 100;
-    opacity: 1;
-    animation: bright 7s linear infinite;
+  height: 10vh;
+  line-height: 7vh;
+  font-size: clamp(0.5rem, 5vw, 3.0rem);
+  color: rgba(255, 102, 0, 0.8);
+  text-align: center;
+  font-weight: 100;
+  opacity: 1;
+  animation: bright 7s linear infinite;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    justify-items: center;
-}
-
-.menuContainer {
-    display: none;
-    margin-top: 100px;
-    grid-template-columns: var(--menuContainer-col);
-    grid-auto-flow: dense;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    gap: 50px;
-}
-
-.downbarContainer {
-    position: absolute;
-    top: 80%;
-    left: 15%;
-    width: 70vw;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    z-index: 5;
-}
-
-.downbarContainer2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25%, auto));
-    grid-template-columns: repeat(5, auto);
-    justify-content: center;
-    align-items: center;
-}
-
-.downbarMenuContainer {
-    position: absolute;
-    top: -600%;
-    width: 70vw;
-    height: 50vh;
-    border: 1px solid white;
-    display: grid;
-    grid-template-rows: repeat(auto-fill, minmax(10%, auto));
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
 
 .subMenus {
-    width: 20vw;
-    height: 5vh;
-    line-height: 5vh;
-    text-align: center;
+  height: 5vh;
+  line-height: 5vh;
 }
 
 .subMenu {
-    color: rgba(255, 255, 255, 0.616);
-    font-size: clamp(0.5rem, 5vw, 3.0rem);
+  color: rgba(255, 255, 255, 0.616);
+  font-size: clamp(0.5rem, 5vw, 3.0rem);
+}
+
+.menuContainer {
+  display: none;
+  margin-top: 100px;
+  grid-template-columns: var(--menuContainer-col);
+  grid-auto-flow: dense;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.downbarContainer {
+  position: absolute;
+  top: 80%;
+  left: 15%;
+  width: 70vw;
+  height: 10vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25%, auto));
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.downbarMenuContainer {
+  position: absolute;
+  top: -630%;
+  left: 0%;
+  width: 70vw;
+  height: 50vh;
+  border-radius: 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100%, auto));
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
 }
 
 .downbar {
-    position: fixed;
-    padding: 0px;
-    width: 70vw;
-    height: 10vh;
-    margin: 10px auto;
-    background-color: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  padding: 0px;
+  width: 70vw;
+  height: 10vh;
+  margin: 10px auto;
+}
+
+.buyMenu{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 68vw;
+  height: 100vh;
+  list-style: none;
+  padding: 0px;
+  margin-top: 10px;
+  margin-left: 10px;
+  z-index: 12;
+  display: grid;
+  grid-template-columns: var(--menuContainer-col);
+  grid-template-rows: auto;
+  justify-items: center; 
+  align-items: top;
+}
+/* --------------------스크롤바-------------------- */
+.buyMenu::-webkit-scrollbar {
+  width: 10px;
+}
+.buyMenu::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.buyMenu::-webkit-scrollbar-track {
+  background-color: rgba(255, 238, 0, 0.6);
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+/* --------------------스크롤바-------------------- */
+.buy{
+  width: var(--buy-width);
+  height: var(--buy-height);
+  margin-top: 10px;
+  margin-bottom: var(--margin-bottom);
+  color: black;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr 1fr;
+  justify-items: center;
+  align-items: bottom;
+  text-align: center;
+  gap: 5px;
+  font-size: clamp(0.7rem, 0.8rem, 1.5rem);
+}
+
+.imgs{
+  width: 100%;
+  min-height: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid #d9ceb5;
+  background-color: white;
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  z-index: 13;
+}
+
+.price{
+  font-size: clamp(0.5rem, 5vw, 2.0rem);
+  color: rgb(0, 0, 0);
+  z-index: 14;
 }
 
 .disable {
-    display: none;
+  display: none;
 }
 
 .enable {
-    display: block;
-    background-color: white;
+  display: block;
 }
 
 /* ------------------------card----------------------- */
 
 .checkbox-wrapper-16 *,
-  .checkbox-wrapper-16 *:after,
-  .checkbox-wrapper-16 *:before {
+.checkbox-wrapper-16 *:after,
+.checkbox-wrapper-16 *:before {
   box-sizing: border-box;
 }
 
 .checkbox-wrapper-16 .checkbox-tile {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  width: 7rem;
-  min-height: 7rem;
+  width: 10rem;
+  min-height: 10rem;
   border-radius: 0.5rem;
-  border: 2px solid #b5bfd9;
-  background-color: #fff;
+  border: 2px solid rgba(255, 230, 0, 0.7);
+  background-color: white;
+  background-size: 100% 100%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: 0.15s ease;
   cursor: pointer;
@@ -184,7 +287,7 @@ body {
 }
 
 .checkbox-wrapper-16 .checkbox-tile:hover {
-  border-color: #2260ff;
+  border-color: rgba(255, 0, 0, 0.7);
 }
 
 .checkbox-wrapper-16 .checkbox-tile:hover:before {
@@ -192,244 +295,451 @@ body {
   opacity: 1;
 }
 
-.checkbox-wrapper-16 .checkbox-icon {
-  transition: 0.375s ease;
-  color: #494949;
-}
-
-.checkbox-wrapper-16 .checkbox-icon svg {
-  width: 3rem;
-  height: 3rem;
-}
-
-:is(.checkbox-wrapper-16 .checkbox-label, .checkbox-wrapper-16 .eachPrice) {
-  color: #000000;
+:is(.burger .checkbox-label, .burger .eachPrice) {
+  color: #ffbb00;
   transition: 0.375s ease;
   text-align: center;
-  line-height: 5rem;
+  margin: 0px 0px 0px;
+}
+
+:is(.drink .checkbox-label, .drink .eachPrice) {
+  color: #ffbb00;
+  transition: 0.375s ease;
+  text-align: center;
+  margin: 0px 0px 0px;
+}
+
+:is(.set .checkbox-label, .set .eachPrice) {
+  color: #ffbb00;
+  transition: 0.375s ease;
+  text-align: center;
+  margin: 0px 0px 0px;
+}
+
+:is(.side .checkbox-label, .side .eachPrice) {
+  color: #ffbb00;
+  transition: 0.375s ease;
+  text-align: center;
+  margin: 0px 0px 0px;
+}
+
+.checkbox-wrapper .checkbox-label{
+  margin-bottom: 30px;
+}
+
+.checkbox-wrapper .eachPrice{
+  margin-top: 50px;
 }
 
 /* ------------------------card----------------------- */
+/* ------------------------card2----------------------- */
+
+.card2 {
+  width: 68.5vw;
+  height: 15vh;
+  perspective: 1000px;
+}
+
+.card2-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card2:hover .card2-inner {
+  transform: rotateY(180deg);
+}
+
+.card2-front,
+.card2-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card2-front {
+  background-color: rgb(255, 175, 1, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 1.5rem;
+  transform: rotateY(0deg);
+}
+
+.card2-back {
+  background-color: rgba(255, 124, 1, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: clamp(0.5rem, 5vw, 3.0rem);
+  transform: rotateY(180deg);
+}
+
+/* ------------------------card2----------------------- */
+/* ------------------------card3----------------------- */
+
+.card3 {
+  position: relative;
+  width: 70vw;
+  height: 50vh;
+  border-radius: 14px;
+  z-index: 11;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px #000000, 0px 0px 20px #ffffff;
+}
+
+.bg {
+  position: absolute;
+  width: 67vw;
+  height: 48vh;
+  z-index: 2;
+  background: rgb(255, 255, 255, 0.5);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
+}
+
+/* .blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 70vw;
+  height: 50vh;
+  border-radius: 50%;
+  background-color: rgb(255, 172, 17, 0.5);
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+} */
+/* ------------------------card3----------------------- */
+
+/* ------------------------card4----------------------- */
+.card4 {
+  position: absolute;
+  top: -120%;
+  width: 69vw;
+  height: 10vh;
+  border-radius: 14px;
+  z-index: 11;
+  background-color: white;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.card4Dis {
+  display: none;
+}
+/* ------------------------card4----------------------- */
+
+/* ------------------------button1----------------------- */
+.orderButton {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  padding: var(--button-padding);
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #ffbb00;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #ffbb00;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #ffbb00;
+}
+
+.orderButton:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #ffbb00;
+}
+
+.orderButton:active {
+  transform: scale(0.9);
+}
+/* ------------------------button1----------------------- */
+
 /* ------------------------animated----------------------- */
 
 @keyframes spin {
-    0% {
-        --rotate: 0deg;
-    }
+  0% {
+    --rotate: 0deg;
+  }
 
-    100% {
-        --rotate: 360deg;
-    }
+  100% {
+    --rotate: 360deg;
+  }
 }
 
 @keyframes bright {
-    0% {
-        text-shadow: 0px 0px 10px rgb(0, 255, 0),
-            0px 0px 20px rgb(0, 255, 0),
-            0px 0px 30px rgb(0, 255, 0);
-    }
+  0% {
+    text-shadow: 0px 0px 10px var(--color-bright-animated),
+      0px 0px 10px var(--color-bright-animated),
+      0px 0px 30px var(--color-bright-animated),
+      0px 0px 50px var(--color-bright-animated);
+  }
 
-    19% {
-        text-shadow: 0px 0px 10px rgb(0, 255, 0),
-            0px 0px 20px rgb(0, 255, 0),
-            0px 0px 30px rgb(0, 255, 0);
-    }
+  19% {
+    text-shadow: 0px 0px 10px var(--color-bright-animated),
+      0px 0px 10px var(--color-bright-animated),
+      0px 0px 30px var(--color-bright-animated),
+      0px 0px 50px var(--color-bright-animated);
+  }
 
-    20% {
-        text-shadow: 0px 0px 10px rgba(0, 255, 0, 0)
-    }
+  20% {
+    text-shadow: 0px 0px 10px rgba(0, 255, 0, 0)
+  }
 
-    21% {
-        text-shadow: 0px 0px 10px rgb(0, 255, 0),
-            0px 0px 20px rgb(0, 255, 0),
-            0px 0px 30px rgb(0, 255, 0);
-    }
+  21% {
+    text-shadow: 0px 0px 10px var(--color-bright-animated),
+      0px 0px 10px var(--color-bright-animated),
+      0px 0px 30px var(--color-bright-animated),
+      0px 0px 50px var(--color-bright-animated);
+  }
 
-    50% {
-        text-shadow: 0px 0px 10px rgb(0, 255, 0),
-            0px 0px 20px rgb(0, 255, 0),
-            0px 0px 30px rgb(0, 255, 0);
-    }
+  50% {
+    text-shadow: 0px 0px 10px var(--color-bright-animated),
+      0px 0px 10px var(--color-bright-animated),
+      0px 0px 30px var(--color-bright-animated),
+      0px 0px 50px var(--color-bright-animated);
+  }
 
-    51% {
-        text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5),
-            0px 0px 20px rgba(0, 255, 0, 0.5),
-            0px 0px 30px rgba(0, 255, 0, 0.5);
-    }
+  51% {
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5),
+      0px 0px 10px rgba(255, 255, 255, 0.5),
+      0px 0px 30px rgba(255, 255, 255, 0.5),
+      0px 0px 50px var(--color-bright-animated);
+  }
 
-    52% {
-        text-shadow: 0px 0px 10px rgb(0, 255, 0),
-            0px 0px 20px rgb(0, 255, 0),
-            0px 0px 30px rgb(0, 255, 0);
-    }
+  52% {
+    text-shadow: 0px 0px 10px var(--color-bright-animated),
+      0px 0px 10px var(--color-bright-animated),
+      0px 0px 30px var(--color-bright-animated),
+      0px 0px 50px var(--color-bright-animated);
+  }
 
-    54% {
-        text-shadow: 0px 0px 10px rgba(0, 255, 0, 0);
-    }
+  54% {
+    text-shadow: 0px 0px 10px rgba(0, 255, 0, 0);
+  }
 
-    55% {
-        text-shadow: 0px 0px 10px rgb(0, 255, 0),
-            0px 0px 20px rgb(0, 255, 0),
-            0px 0px 30px rgb(0, 255, 0);
-    }
+  55% {
+    text-shadow: 0px 0px 10px var(--color-bright-animated),
+      0px 0px 10px var(--color-bright-animated),
+      0px 0px 20px var(--color-bright-animated),
+      0px 0px 30px var(--color-bright-animated);
+  }
 
-    100% {
-        text-shadow: 0px 0px 10px rgb(0, 255, 0),
-            0px 0px 20px rgb(0, 255, 0),
-            0px 0px 30px rgb(0, 255, 0);
-    }
+  100% {
+    text-shadow: 0px 0px 10px var(--color-bright-animated),
+      0px 0px 10px var(--color-bright-animated),
+      0px 0px 20px var(--color-bright-animated),
+      0px 0px 30px var(--color-bright-animated);
+  }
 }
+
+
+
+/* @keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+} */
 
 /* ------------------------animated----------------------- */
 
 /* -----------------------button ui----------------------- */
 /* ---------animated--------- */
 .animated-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: var(--padding-sub);
-    border: 4px solid;
-    border-color: transparent;
-    font-size: 16px;
-    background-color: inherit;
-    border-radius: 100px;
-    font-weight: 600;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: var(--padding-sub);
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
-  .burger .animated-button {
-    text-shadow: white;
-    color: var(--color-burger);
-    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.7),
-    0px 0px 20px rgb(255, 0, 0),
-    0px 0px 30px rgb(255, 0, 0);
-  }
-  .drink .animated-button {
-    color: var(--color-drink);
-    box-shadow: 0 0 0 2px rgb(0, 162, 255, 0.7),
-    0px 0px 20px rgb(0, 162, 255),
-    0px 0px 30px rgb(0, 162, 255);
-  }
-  .set .animated-button {
-    color: var(--color-set);
-    box-shadow: 0 0 0 2px rgb(9, 255, 0, 0.7),
-    0px 0px 20px rgb(9, 255, 0),
-    0px 0px 30px rgb(9, 255, 0);
-  }
-  .side .animated-button {
-    color: var(--color-side);
-    box-shadow: 0 0 0 2px rgb(251, 255, 0, 0.7),
-    0px 0px 20px rgb(251, 255, 0),
-    0px 0px 30px rgb(251, 255, 0);
-  }
+.burger .animated-button {
+  text-shadow: white;
+  color: var(--color-burger);
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.7),
+    0px 0px 20px var(--color-burger),
+    0px 0px 30px var(--color-burger);
+}
+
+.drink .animated-button {
+  color: var(--color-drink);
+  box-shadow: 0 0 0 2px rgb(0, 162, 255, 0.7),
+    0px 0px 20px var(--color-drink),
+    0px 0px 30px var(--color-drink);
+}
+
+.set .animated-button {
+  color: var(--color-set);
+  box-shadow: 0 0 0 2px rgba(55, 0, 255, 0.7),
+    0px 0px 20px var(--color-set),
+    0px 0px 30px var(--color-set);
+}
+
+.side .animated-button {
+  color: var(--color-side);
+  box-shadow: 0 0 0 2px rgba(236, 33, 255, 0.7),
+    0px 0px 20px var(--color-side),
+    0px 0px 30px var(--color-side);
+}
+
 /* ---------animated--------- */
 
 /* ---------svg--------- */
-  .burger .animated-button svg {
-    position: absolute;
-    width: var(--arrow-size);
-    fill: var(--color-burger);
-    z-index: 9;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .drink .animated-button svg {
-    position: absolute;
-    width: var(--arrow-size);
-    fill: var(--color-drink);
-    z-index: 9;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .set .animated-button svg {
-    position: absolute;
-    width: var(--arrow-size);
-    fill: var(--color-set);
-    z-index: 9;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .side .animated-button svg {
-    position: absolute;
-    width: var(--arrow-size);
-    fill: var(--color-side);
-    z-index: 9;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
+.burger .animated-button svg {
+  position: absolute;
+  width: var(--arrow-size);
+  fill: var(--color-burger);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.drink .animated-button svg {
+  position: absolute;
+  width: var(--arrow-size);
+  fill: var(--color-drink);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.set .animated-button svg {
+  position: absolute;
+  width: var(--arrow-size);
+  fill: var(--color-set);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.side .animated-button svg {
+  position: absolute;
+  width: var(--arrow-size);
+  fill: var(--color-side);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
 /* ---------svg--------- */
-  
-  .animated-button .arr-1 {
-    right: 16px;
-  }
-  
-  .animated-button .arr-2 {
-    left: -25%;
-  }
-  
-  /* ---------circle--------- */
-  .animated-button .circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
 
-  .burger .animated-button .circle{
-    background-color: var(--color-burger);
-  }
-  .drink .animated-button .circle{
-    background-color: var(--color-drink);
-  }
-  .set .animated-button .circle{
-    background-color: var(--color-set);
-  }
-  .side .animated-button .circle{
-    background-color: var(--color-side);
-  }
-  /* ---------circle--------- */
+.animated-button .arr-1 {
+  right: 16px;
+}
 
-  .animated-button .text {
-    position: relative;
-    z-index: 1;
-    transform: translateX(-12px);
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .animated-button:hover {
-    box-shadow: 0 0 0 12px transparent;
-    color: #212121;
-    border-radius: 12px;
-  }
-  
-  .animated-button:hover .arr-1 {
-    right: -25%;
-  }
-  
-  .animated-button:hover .arr-2 {
-    left: 16px;
-  }
-  
-  .animated-button:hover .text {
-    transform: translateX(12px);
-  }
-  
-  .animated-button:hover svg {
-    fill: #212121;
-  }
-  
-  .animated-button:active {
-    scale: 0.95;
-    box-shadow: 0 0 0 4px greenyellow;
-  }
-  
-  .animated-button:hover .circle {
-    width: 220px;
-    height: 220px;
-    opacity: 1;
-  }
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+/* ---------circle--------- */
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.burger .animated-button .circle {
+  background-color: var(--color-burger);
+}
+
+.drink .animated-button .circle {
+  background-color: var(--color-drink);
+}
+
+.set .animated-button .circle {
+  background-color: var(--color-set);
+}
+
+.side .animated-button .circle {
+  background-color: var(--color-side);
+}
+
+/* ---------circle--------- */
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #212121;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}

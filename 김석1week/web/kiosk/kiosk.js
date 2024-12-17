@@ -1,5 +1,6 @@
 //html query
 let subMenu = document.querySelectorAll(".subMenu");
+let subMenuOnClick = document.querySelectorAll(".animated-button");
 let menuClose = document.querySelector(".menuClose");
 let burger = document.querySelector(".burger");
 let drink = document.querySelector(".drink");
@@ -7,99 +8,100 @@ let set = document.querySelector(".set");
 let side = document.querySelector(".side");
 let priced = document.querySelector(".price");
 let choiseMenu = document.querySelector('.choiseMenu');
-let downbarContainer = document.querySelector('.downbarContainer');
+let card2 = document.querySelector('.card2');
 let downbarMenu = document.querySelector('.downbarMenuContainer');
 // let menuContainers = document.querySelectorAll(".menuContainer");
 let cardOrigin = document.querySelector('.highMenu');
+let card4 = document.querySelector('.card4');
 
 let menuFull = [];
 
 //배열
 let burgerCard = [
     {
-        name: 'fat_burger',
-        price: 150,
+        name: '풀드비프 와퍼',
+        price: 5500,
         index: 0
     },
     {
-        name: 'holy_burger',
-        price: 300,
+        name: '스파이시 와퍼',
+        price: 6000,
         index: 0
     },
     {
-        name: 'good_burger',
-        price: 450,
+        name: '두툼버거',
+        price: 4500,
         index: 0
     },
     {
-        name: 'da_burger',
-        price: 100,
+        name: '몬스터 와퍼',
+        price: 5000,
         index: 0
     }
 ];
 let drinkCard = [
     {
-        name: 'fat_drink',
-        price: 150,
+        name: '사이다',
+        price: 1500,
         index: 0
     },
     {
-        name: 'holy_drink',
-        price: 300,
+        name: '코카콜라',
+        price: 1500,
         index: 0
     },
     {
-        name: 'good_drink',
-        price: 450,
+        name: '모닝에이드 오렌지',
+        price: 2000,
         index: 0
     },
     {
-        name: 'da_drink',
-        price: 100,
+        name: '핫초코',
+        price: 1000,
         index: 0
     }
 ];
 let setCard = [
     {
-        name: 'fat_set',
-        price: 150,
+        name: '몬스터 주니어',
+        price: 8000,
         index: 0
     },
     {
-        name: 'holy_set',
-        price: 300,
+        name: '더블비프불고기버거',
+        price: 11000,
         index: 0
     },
     {
-        name: 'good_set',
-        price: 450,
+        name: '비프불고기버거',
+        price: 8500,
         index: 0
     },
     {
-        name: 'da_set',
-        price: 100,
+        name: '통새우와퍼주니어',
+        price: 9000,
         index: 0
     }
 ];
 let sideCard = [
     {
-        name: 'fat_side',
-        price: 150,
+        name: '어니언링',
+        price: 2000,
         index: 0
     },
     {
-        name: 'holy_side',
-        price: 300,
+        name: '치킨너겟[8조각]',
+        price: 3000,
         index: 0
     },
     {
-        name: 'good_side',
-        price: 450,
+        name: '치즈스틱',
+        price: 2000,
         index: 0
     },
     {
-        name: 'da_side',
-        price: 100,
+        name: '프렌치프라이',
+        price: 3000,
         index: 0
     }
 ];
@@ -109,6 +111,7 @@ let burgerFull = [];
 let drinkFull = [];
 let setFull = [];
 let sideFull = [];
+let allIndex = 0;
 
 
 function copyCloneB() {
@@ -161,6 +164,9 @@ function copyCloneB() {
             const parentContainerItem = document.querySelector(`.${str}Full`);
             for (let j = 0; j < arr.length; j++) {
                 const clonedItem = menuFull[i].cloneNode(true);
+                imgFool = clonedItem.querySelector('.checkbox-tile');
+                imgFool.style.backgroundImage = `url(imgs/${encodeURIComponent(arr[j].name)}.png)`;
+                // imgFool.style.backgroundImage = `url(imgs/${str}${j}.png)`;
                 clonedItem.querySelector('.checkbox-label').textContent = eval(`${str}Card[${j}].name;`);
                 clonedItem.querySelector('.eachPrice').textContent = eval(`${str}Card[${j}].price;`);
                 eval(`${str}Full[${j}] = clonedItem;`);
@@ -183,12 +189,11 @@ function copyCloneB() {
 
 copyCloneB();
 
-
 //서브메뉴
 document.addEventListener("DOMContentLoaded", function () {
     let menuContainers = document.querySelectorAll(".menuContainer");
-    for (let i = 0; i < subMenu.length; i++) {
-        subMenu[i].onclick = function () {
+    for (let i = 0; i < subMenuOnClick.length; i++) {
+        subMenuOnClick[i].onclick = function () {
             if (menuContainers[i].style.display == 'grid') {
                 for (let k = 0; k < menuContainers.length; k++) {
                     menuContainers[k].style.display = 'none';
@@ -246,21 +251,27 @@ function count() {
         };
     }
 
-    //버튼을 생성한다.
     document.addEventListener("DOMContentLoaded", function () {
         //각 매개변수를 통해 필요한 요소들을 가져온다.
+        //버튼을 생성한다.
         function createButtons(liElement, index, callArray) {
+            //이미지 넣기
+            const backImg = document.createElement('div');
+            backImg.classList.add('imgs');
+            backImg.style.backgroundImage = `url(imgs/${encodeURIComponent(callArray[index].name)}.png)`;
+
             //더하기 버튼을 만든다.
             const addButton = document.createElement('button');
             addButton.textContent = 'Add';
-            addButton.classList.add('addButton', 'dontDist');
+            addButton.classList.add('addButton');
 
             //빼기 버튼을 만든다.
             const removeButton = document.createElement('button');
             removeButton.textContent = 'Remove';
-            removeButton.classList.add('removeButton', 'dontDist');
+            removeButton.classList.add('removeButton');
 
             //li요소 자식위치에 버튼들을 추가한다.
+            liElement.appendChild(backImg);
             liElement.appendChild(addButton);
             liElement.appendChild(removeButton);
 
@@ -268,10 +279,13 @@ function count() {
             addButton.onclick = function () {
                 callArray[index].index++;
                 allPrice += callArray[index].price;
+                allIndex++;
                 liElement.textContent = `${callArray[index].name} ${callArray[index].index}개`;
+                liElement.appendChild(backImg);
                 liElement.appendChild(addButton);
                 liElement.appendChild(removeButton);
-                priced.textContent = `${allPrice}`;
+                priced.textContent = `${allPrice} 원`;
+                choiseMenu.textContent = `${allIndex}개 선택되었습니다.`;
             };
 
             //빼기 버튼을 클릭 시.
@@ -280,6 +294,7 @@ function count() {
 
                 if (callArray[index].index > 0) {
                     liElement.textContent = `${callArray[index].name} ${callArray[index].index}개`;
+                    liElement.appendChild(backImg);
                     liElement.appendChild(addButton);
                     liElement.appendChild(removeButton);
                 }
@@ -287,85 +302,109 @@ function count() {
                     liElement.remove();
                 }
                 allPrice -= callArray[index].price;
-                priced.textContent = `${allPrice}`;
+                allIndex--;
+                priced.textContent = `${allPrice} 원`;
+                choiseMenu.textContent = `${allIndex}개 선택되었습니다.`;
             };
         }
 
         for (let i = 0; i < burgerCall.length; i++) {
-            burgerFull[i].querySelector('.animated-button').onclick = function () {
+            burgerFull[i].addEventListener('click', function () {
                 burgerCall[i].index++;
-                priced.textContent = `${allPrice += burgerCall[i].price}`;
+                allIndex++;
+                priced.textContent = `${allPrice += burgerCall[i].price} 원`;
                 if ((burgerCall[i].index == 1)) {
-                    priceText[i] = document.querySelector('.downbarMenuContainer ul').appendChild(document.createElement('li'));
-                    priceText[i].classList.add('dontDist');
+                    //계산서에 요소 넣기
+                    priceText[i] = document.querySelector('.downbarMenuContainer .buyMenu').appendChild(document.createElement('div'));
+                    priceText[i].classList.add('buy');
+                    //계산서에 숫자 넣기
                     priceText[i].textContent = `${burgerCall[i].name} ${burgerCall[i].index}개`
+                    //계산서에 버튼 넣기
                     createButtons(priceText[i], i, burgerCall);
                 }
                 else {
-                    priceText[i].firstChild.textContent = `${burgerCall[i].name} ${burgerCall[i].index}개`
+                    priceText[i].firstChild.textContent = `${burgerCall[i].name} ${burgerCall[i].index}개`;
                 }
-            }
+                //총갯수 적기
+                choiseMenu.textContent = `${allIndex}개 선택되었습니다.`;
+            })
         }
         for (let i = 0; i < drinkCall.length; i++) {
-            drinkFull[i].onclick = function () {
+            drinkFull[i].addEventListener('click', function () {
                 drinkCall[i].index++;
-                priced.textContent = `${allPrice += drinkCall[i].price}`;
+                allIndex++;
+                priced.textContent = `${allPrice += drinkCall[i].price} 원`;
                 if ((drinkCall[i].index == 1)) {
-                    priceText[i] = document.querySelector('.downbarMenuContainer ul').appendChild(document.createElement('li'));
-                    priceText[i].classList.add('dontDist');
+                    priceText[i] = document.querySelector('.downbarMenuContainer .buyMenu').appendChild(document.createElement('div'));
+                    priceText[i].classList.add('buy');
                     priceText[i].textContent = `${drinkCall[i].name} ${drinkCall[i].index}개`
                     createButtons(priceText[i], i, drinkCall);
                 }
                 else {
                     priceText[i].firstChild.textContent = `${drinkCall[i].name} ${drinkCall[i].index}개`
                 }
-            }
+                choiseMenu.textContent = `${allIndex}개 선택되었습니다.`;
+            })
         }
         for (let i = 0; i < setCall.length; i++) {
-            setFull[i].onclick = function () {
+            setFull[i].addEventListener('click', function () {
                 setCall[i].index++;
-                priced.textContent = `${allPrice += setCall[i].price}`;
+                allIndex++;
+                priced.textContent = `${allPrice += setCall[i].price} 원`;
                 if ((setCall[i].index == 1)) {
-                    priceText[i] = document.querySelector('.downbarMenuContainer ul').appendChild(document.createElement('li'));
-                    priceText[i].classList.add('dontDist');
+                    priceText[i] = document.querySelector('.downbarMenuContainer .buyMenu').appendChild(document.createElement('div'));
+                    priceText[i].classList.add('buy');
                     priceText[i].textContent = `${setCall[i].name} ${setCall[i].index}개`
                     createButtons(priceText[i], i, setCall);
                 }
                 else {
                     priceText[i].firstChild.textContent = `${setCall[i].name} ${setCall[i].index}개`
                 }
-            }
+                choiseMenu.textContent = `${allIndex}개 선택되었습니다.`;
+            })
         }
         for (let i = 0; i < sideCall.length; i++) {
-            sideFull[i].onclick = function () {
+            sideFull[i].addEventListener('click', function () {
                 sideCall[i].index++;
-                priced.textContent = `${allPrice += sideCall[i].price}`;
+                allIndex++;
+                priced.textContent = `${allPrice += sideCall[i].price} 원`;
                 if ((sideCall[i].index == 1)) {
-                    priceText[i] = document.querySelector('.downbarMenuContainer ul').appendChild(document.createElement('li'));
-                    priceText[i].classList.add('dontDist');
+                    priceText[i] = document.querySelector('.downbarMenuContainer .buyMenu').appendChild(document.createElement('div'));
+                    priceText[i].classList.add('buy');
                     priceText[i].textContent = `${sideCall[i].name} ${sideCall[i].index}개`
                     createButtons(priceText[i], i, sideCall);
                 }
                 else {
                     priceText[i].firstChild.textContent = `${sideCall[i].name} ${sideCall[i].index}개`
                 }
-            }
+                choiseMenu.textContent = `${allIndex}개 선택되었습니다.`;
+            })
         }
     })
 
     document.addEventListener("DOMContentLoaded", function () {
-        addEventListener("click", function (e) {
-            console.log(priceText);
-            let dontDist = this.document.querySelectorAll('.dontDist');
+        document.addEventListener("click", function (e) {
+            console.log(e.target);
+            let downbarAll = card2.querySelectorAll('*');
             //off
-            if ((e.target != downbarMenu) && (downbarMenu.classList.contains('enable')) && !Array.from(dontDist).some(item => item === e.target)) {
+            if ((downbarMenu.classList.contains('enable')) && (e.target == downbarAll)) {
                 downbarMenu.classList.remove('enable');
                 downbarMenu.classList.add('disable');
+                card4.classList.remove('card4');
+                card4.classList.add('card4Dis');
+            }
+            else if ((Array.from(downbarAll).some(item => item === e.target)) && (downbarMenu.classList.contains('enable'))) {
+                downbarMenu.classList.remove('enable');
+                downbarMenu.classList.add('disable');
+                card4.classList.remove('card4');
+                card4.classList.add('card4Dis');
             }
             //on
-            else if ((e.target == choiseMenu) && (downbarMenu.classList.contains('disable'))) {
+            else if ((Array.from(downbarAll).some(item => item === e.target)) && (downbarMenu.classList.contains('disable'))) {
                 downbarMenu.classList.remove('disable');
                 downbarMenu.classList.add('enable');
+                card4.classList.add('card4');
+                card4.classList.remove('card4Dis');
             }
         })
     })

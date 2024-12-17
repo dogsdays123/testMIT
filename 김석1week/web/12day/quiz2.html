@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: 1px solid black;
+            width: 50px;
+            height: 30px;
+        }
+
+        input {
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <input type="number" class="row">행
+            <input type="number" class="col">열
+            <button class="save">작성</button>
+            <table>
+            </table>
+        </fieldset>
+    </div>
+    <script>
+        let inputValueRow = document.querySelector('.row');
+        let inputValueCol = document.querySelector('.col');
+        let save = document.querySelector('.save');
+        const table = document.querySelector('table');
+        let saveValue = [];
+        document.addEventListener('DOMContentLoaded', function () {
+            function saveInput() {
+                saveValue[0] = inputValueRow.value;
+                saveValue[1] = inputValueCol.value;
+            }
+            save.onclick = function () {
+                saveInput();
+                const elementTr = [];
+                const elementTd = [];
+                for (let i = 0; i < saveValue[0]; i++) {
+                    const tr = document.createElement('tr');
+                    elementTr[i] = table.appendChild(tr);
+
+                    for (let j = 0; j < saveValue[1]; j++) {
+                        const td = document.createElement('td');
+                        elementTd[j] = elementTr[i].appendChild(td);
+                        elementTd[j].textContent = `${i}, ${j}`;
+                    }
+                }
+                console.log(elementTr);
+                console.log(elementTd);
+            }
+        })
+    </script>
+</body>
+
+</html>

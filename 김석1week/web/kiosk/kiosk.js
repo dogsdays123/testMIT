@@ -257,23 +257,30 @@ function count() {
         function createButtons(liElement, index, callArray) {
             //이미지 넣기
             const backImg = document.createElement('div');
+            const buttonDiv = document.createElement('div');
+            const plusButton = document.createElement('i');
+            const minusButton = document.createElement('i');
             backImg.classList.add('imgs');
+            buttonDiv.classList.add('cloneButtons');
+            plusButton.classList.add('fa-solid', 'fa-plus');
+            minusButton.classList.add('fa-solid', 'fa-minus');
             backImg.style.backgroundImage = `url(imgs/${encodeURIComponent(callArray[index].name)}.png)`;
 
             //더하기 버튼을 만든다.
             const addButton = document.createElement('button');
-            addButton.textContent = 'Add';
             addButton.classList.add('addButton');
+            addButton.appendChild(plusButton);
 
             //빼기 버튼을 만든다.
             const removeButton = document.createElement('button');
-            removeButton.textContent = 'Remove';
             removeButton.classList.add('removeButton');
+            removeButton.appendChild(minusButton);
 
             //li요소 자식위치에 버튼들을 추가한다.
             liElement.appendChild(backImg);
-            liElement.appendChild(addButton);
-            liElement.appendChild(removeButton);
+            liElement.appendChild(buttonDiv);
+            buttonDiv.appendChild(addButton);
+            buttonDiv.appendChild(removeButton);
 
             //더하기 버튼을 클릭 시.
             addButton.onclick = function () {
@@ -282,8 +289,9 @@ function count() {
                 allIndex++;
                 liElement.textContent = `${callArray[index].name} ${callArray[index].index}개`;
                 liElement.appendChild(backImg);
-                liElement.appendChild(addButton);
-                liElement.appendChild(removeButton);
+                liElement.appendChild(buttonDiv);
+                buttonDiv.appendChild(addButton);
+                buttonDiv.appendChild(removeButton);
                 priced.textContent = `${allPrice} 원`;
                 choiseMenu.textContent = `${allIndex}개 선택되었습니다.`;
             };
@@ -295,8 +303,9 @@ function count() {
                 if (callArray[index].index > 0) {
                     liElement.textContent = `${callArray[index].name} ${callArray[index].index}개`;
                     liElement.appendChild(backImg);
-                    liElement.appendChild(addButton);
-                    liElement.appendChild(removeButton);
+                    liElement.appendChild(buttonDiv);
+                    buttonDiv.appendChild(addButton);
+                    buttonDiv.appendChild(removeButton);
                 }
                 else {
                     liElement.remove();

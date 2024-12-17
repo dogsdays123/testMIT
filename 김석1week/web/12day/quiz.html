@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: unset;
+        }
+
+        li {
+            list-style: none;
+            position: relative;
+            padding-left: 0px;
+            margin-top: 5px;
+        }
+        li.checked::before{
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 20px;
+            text-decoration: line-through;
+        }
+        li.checked {
+            text-decoration: line-through;
+        }
+        .check {
+            margin-left: 20px;
+            content: "✔"; 
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>할 일 목록</h1>
+    </header>
+    <div class="list">
+        <ul>
+            <li>✔<span class="check">할 일1</span></li>
+            <li>✔<span class="check">할 일1</span></li>
+            <li>✔<span class="check">할 일1</span></li>
+        </ul>
+    </div>
+    <script>
+        let check = document.querySelectorAll('.check');
+        let checkSimbol = document.querySelectorAll('li');
+        document.addEventListener('DOMContentLoaded', function () {
+            for (let i = 0; i < check.length; i++) {
+                check[i].onclick = function () {
+                    checkSimbol[i].classList.add('checked');
+                    checkSimbol[i].style.textDecoration = 'line-through';
+                    checkSimbol[i].style.color = '#ccc';
+                    check[i].style.color = '#ccc';
+                    check[i].style.textDecoration = 'line-through';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title></title>
+<style>
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing:border-box; 
+ }
+body {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  min-height: 100vh; 
+}
+.container
+{
+margin: auto;
+border: 3px solid gray;
+border-radius: 5px;
+padding: 20px;
+background-color: gainsboro;
+position: relative; 
+min-width: 300px; 
+min-height: 550px; 
+padding: 40px 30px 30px; 
+}
+input
+{
+width: 20px;
+color: black;
+border: 3px solid rgb(65, 63, 63);
+border-radius: 5px;
+padding: 26px;
+margin: 5px;
+font-size: 2em;
+}
+#calc{
+  width: 280px;
+	border-radius: 3px;
+	padding: 20px;
+	margin: auto;
+  text-align: right;
+}
+#clear{
+	background-color: red;
+  color: white;
+}
+#math {
+  background-color: gray;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+<div class= "container">
+<form name = "form1">
+	<!-- 디스플레이 창 -->
+  <input id = "calc" type ="text" name = "answer" readonly> <br> <br>
+
+  <!-- 계산기 버튼 -->
+  <input type = "button" value = "7" onclick = "form1.answer.value += '7' ">
+  <input type = "button" value = "8" onclick = "form1.answer.value += '8' ">
+  <input type = "button" value = "9" onclick = "form1.answer.value += '9' ">
+  <input type = "button" value = "+" onclick = "form1.answer.value += '+' " id="math">
+  <br> <br>
+
+  <input type = "button" value = "4" onclick = "form1.answer.value += '4' ">
+  <input type = "button" value = "5" onclick = "form1.answer.value += '5' ">
+  <input type = "button" value = "6" onclick = "form1.answer.value += '6' ">
+  <input type = "button" value = "-" onclick = "form1.answer.value += '-' " id="math">
+  <br> <br>
+
+  <input type = "button" value = "1" onclick = "form1.answer.value += '1' ">
+  <input type = "button" value = "2" onclick = "form1.answer.value += '2' ">
+  <input type = "button" value = "3" onclick = "form1.answer.value += '3' ">
+  <input type = "button" value = "*" onclick = "form1.answer.value += '*' " id="math">
+  <br> <br>
+  
+   <!-- 초기화 버튼 -->
+   <input type = "button" value = "C" onclick = "form1.answer.value = ' ' " id= "clear" >
+   <input type = "button" value = "0" onclick = "form1.answer.value += '0' ">
+   
+    <!-- "="버튼을 눌렀을때 onclick() 이 sum값을 보여줌 -->
+  <input type = "button" value = "=" onclick = "form1.answer.value = eval(form1.answer.value) " id= "math">
+  <input type = "button" value = "/" onclick = "form1.answer.value += '/' " id="math">
+</form>
+</div>
+</body>
+</html>

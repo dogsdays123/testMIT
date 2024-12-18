@@ -56,3 +56,5 @@ let downbarAll = downbarMenu.querySelectorAll('*');
 imgFool.style.backgroundImage = `url(imgs/${encodeURIComponent(arr[j].name)}.png)`;
 //URL 인코딩에서 특수문자가 포함되어 있으면 인식하지 못함
 //따라서 encodeURIComponent() 함수를 이용하여 인코딩 해야함
+
+//&nbsp html 띄워쓰기

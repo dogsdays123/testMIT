@@ -26,6 +26,8 @@ package shop;
         final String MSG_MODIFY_NAME = "이름이 수정되었습니다.";
         final String MSG_MODIFY_TEL = "전화번호가 수정되었습니다.";
         final String MSG_WRONG = "잘못 입력했습니다.";
+        final String PW_WRONG = "비밀번호를 잘못 입력했습니다.";
+        final String ID_WRONG = "해당 아이디가 존재하지 않습니다.";
         final String MSG_DUPLICATE_ID = "중복된 아이디가 있습니다.";
         final String MSG_IS_FULL = "회원수가 채워져서 더 이상 가입을 할 수 없습니다.";
         abstract String mainView(); }

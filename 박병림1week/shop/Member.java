@@ -14,7 +14,7 @@ public abstract class Member {
 
     public void prt() {
         System.out.println("ID : " + this.id);
-        System.out.println("Password : " + this.pw);
+//        System.out.println("Password : " + this.pw);
         System.out.println("Name : " + this.name);
         System.out.println("Telephone : " + this.tel);
     }

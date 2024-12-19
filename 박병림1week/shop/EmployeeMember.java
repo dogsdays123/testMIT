@@ -4,30 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeMember extends Member implements View{
-    EmployeeMember(String id, String pw, String name, String tel) {
-        super(id, pw, name, tel);
+    EmployeeMember(MemberSave member) {
+        super(member.id, member.password, member.name, member.phone);
     }
 
     List<String[]> EmAddList = new ArrayList<String[]>();
     static int error = 0;
 
-    public void addAddress() {
+    public boolean addAddress() {
         String[] address = {id, pw, name, tel};
         if (EmAddList.size() >= 30) {
             error = 2;
             errorOnCustomer(2, false);
-            return;
+            return true;
         }
 
         for (String[] strings : EmAddList) {
             if (strings[0].equals(this.getId())) {
                 error = 1;
                 errorOnCustomer(1, true);
+                return true;
             }
         }
 
         EmAddList.add(address);
         System.out.println(MSG_SUCCESS_ENROLL);
+        return false;
     }
 
     @Override

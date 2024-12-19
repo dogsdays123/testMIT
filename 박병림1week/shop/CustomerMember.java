@@ -4,29 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerMember extends Member implements View {
-    CustomerMember(String id, String pw, String name, String tel) {
-        super(id, pw, name, tel);
+    CustomerMember(MemberSave member) {
+        super(member.id, member.password, member.name, member.phone);
     }
 
     List<String[]> cuAddList = new ArrayList<String[]>();
     static int error = 0;
 
-    public void addAddress() {
+    public boolean addAddress() {
         String[] address = {id, pw, name, tel};
         if(cuAddList.size() >= 100){
             error = 2;
             errorOnCustomer(2, false);
-            return;
+            return true;
         }
 
         for (String[] strings : cuAddList) {
             if (strings[0].equals(this.getId())) {
                 errorOnCustomer(1, true);
-                return;
+                return true;
             }
         }
         cuAddList.add(address);
         System.out.println(MSG_SUCCESS_ENROLL);
+        return false;
     }
 
     @Override
